@@ -121,7 +121,7 @@
   <data name="btnSimpan.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAQ4AAABECAYAAABwBdsbAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DgAACw4BQL7hQQAADTNJREFUeF7tnUuMZVUVhve91bdvdXV3VXWRDj4QuqVl0MGIqQDKwFScaGJiZNBi
+        DQAACw0B7QfALAAADTNJREFUeF7tnUuMZVUVhve91bdvdXV3VXWRDj4QuqVl0MGIqQDKwFScaGJiZNBi
         4sAYH5GER+QhqGgaY3wGIUogURFBA8EoDlBjQpiAJpLgBDQScaIYTMQJDJyW+U/ttXudf699bxdVt6xQ
         /0m+Oufsvdbaj3v3qv0656Y05VhfXx+klAp2j/Pp06eHrTgfznKsw/Luvkt/Qnxln+O8vl2zDJPjcfRs
         cjmmhfM9hVf2W/dRuKVp5cF9q2wc1shPsePtt4hstMI4nUnhDMl0dcbp8Jnrhu1xWCOtKhzn1netpRvJ
@@ -183,7 +183,7 @@
   <data name="btnBatal.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAQ4AAABECAYAAABwBdsbAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAADHNJREFUeF7tnUuMZUUZx+venju3p+fRPU0m+ECYkZHFBCOmAygL03EjiYmRxYiJ
+        DgAACw4BQL7hQQAADHNJREFUeF7tnUuMZUUZx+venju3p+fRPU0m+ECYkZHFBCOmAygL03EjiYmRxYiJ
         C2NUIgmPCIOgohmM8RmEKIFExRE0GIziAjUaggsfiSSwAQ1E3AAGF7iBhdsx/zP11Xz1r+/c240tc6T/
         J/nNOafqe1TV7fNNvc69Kc05Tp48OUopFewe5+PHj4/78nw6y7EOy7v7zv+M/MY+53l9u2YZJufjqGxy
         Peal8z2lN/b77qN082n1wX1f3TitpzzFjrffR2SjL439zEpnSKZrM/bDZ24btsdpPb6adJz7/tb6dCP5
@@ -242,7 +242,7 @@
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAxsAAAMKCAYAAADtVFn3AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DgAACw4BQL7hQQAA/7JJREFUeF7s/cuvdM9V34/ztyTmmkT5TiMlGUWKRHwJ/pDENgOMBIoCEh5ABgxg
+        DQAACw0B7QfALAAA/7JJREFUeF7s/cuvdM9V34/ztyTmmkT5TiMlGUWKRHwJ/pDENgOMBIoCEh5ABgxg
         EGOCQCAbYYFClEhI2JJlC2zF3EZcBjY2DG1GsS0lA388S/KZPz/Vk9TzW+fV77Wq9u7d3dXd7yW9tKvW
         rWp37z691tnd53zX3/k7f+eVMcYYY4wxxhzNd1FhjDHGGGOMMUfgZsMYY4wxxhhzEdxsGGOMMcYYYy6C
         mw1jjDHGGGPMRXCzYYwxxhhjjLkIbjaMMcYYY4wxF8HNhjHGGGOMMeYiuNkwxhhjjDHGXAQ3G8YYY4wx

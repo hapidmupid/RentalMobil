@@ -166,37 +166,37 @@ namespace RentalMobil.Views.admin_
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            //if (dgvKendaraan.SelectedRows.Count > 0)
-            //{
-            //    DataGridViewRow selectedRow = dgvKendaraan.SelectedRows[0];
-            //    int id = Convert.ToInt32(selectedRow.Cells["id_kendaraan"].Value);
+            if (dgvKendaraan.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dgvKendaraan.SelectedRows[0];
+                int id = Convert.ToInt32(selectedRow.Cells["id_kendaraan"].Value);
 
-            //    Kendaraan kendaraan = kendaraanController.GetKendaraanById(id);
-            //    if (kendaraan != null)
-            //    {
-            //        using (var editForm = new EditDataKendaraan(kendaraan))
-            //        {
-            //            if (editForm.ShowDialog() == DialogResult.OK)
-            //            {
-            //                bool success = kendaraanController.UpdateKendaraan(editForm.Kendaraan);
-            //                if (success)
-            //                {
-            //                    MessageBox.Show("Data kendaraan berhasil diperbarui", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //                    LoadData();
-            //                }
-            //                else
-            //                {
-            //                    MessageBox.Show("Gagal memperbarui data kendaraan", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //                }
-            //            }
-            //        }
-            //    }
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Pilih kendaraan yang akan diedit", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //}
-            LoadData();
+                Kendaraan kendaraan = kendaraanController.GetKendaraanById(id);
+                if (kendaraan != null)
+                {
+                    using (var editForm = new EditDataKendaraan(kendaraan))
+                    {
+                        if (editForm.ShowDialog() == DialogResult.OK)
+                        {
+                            bool success = kendaraanController.UpdateKendaraan(editForm.Kendaraan);
+                            if (success)
+                            {
+                                MessageBox.Show("Data kendaraan berhasil diperbarui", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                LoadData();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Gagal memperbarui data kendaraan", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Pilih kendaraan yang akan diedit", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+           
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
