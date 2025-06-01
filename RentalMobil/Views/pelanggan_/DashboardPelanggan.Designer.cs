@@ -110,6 +110,7 @@
             Name = "DashboardPelanggan";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "DashboardPelanggan";
+            Load += DashboardPelanggan_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnLihatRiwayat).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnLogOut).EndInit();

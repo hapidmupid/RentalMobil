@@ -122,5 +122,10 @@ namespace RentalMobil.Views.pelanggan_
             this.Hide();
             authForm.Show();
         }
+
+        private void DashboardPelanggan_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

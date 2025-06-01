@@ -116,5 +116,31 @@ namespace RentalMobil.Views.admin_
         {
 
         }
+
+        private void btnLihatRiwayat_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBeranda_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var dashboardAdmin = new DashboardAdmin();
+            dashboardAdmin.Show();
+        }
+
+        private void btnKelolaPelanggan_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var kelolaPelanggan = new DashDataPelanggan();
+            kelolaPelanggan.Show();
+        }
+
+        private void btnKelolaKendaraan_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var kelolaKendaraan = new DashDataKendaraan();
+            kelolaKendaraan.Show();
+        }
     }
 }
