@@ -1,4 +1,4 @@
-﻿namespace RentalMobil.Views
+﻿namespace RentalMobil.Views.admin_
 {
     partial class EditDataPelanggan
     {
@@ -112,7 +112,9 @@
             Controls.Add(btnBatal);
             Controls.Add(btnSimpan);
             Name = "EditDataPelanggan";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "EditDataPelanggan";
+            Load += EditDataPelanggan_Load;
             ((System.ComponentModel.ISupportInitialize)btnSimpan).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnBatal).EndInit();
             ResumeLayout(false);

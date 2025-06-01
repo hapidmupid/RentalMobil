@@ -64,10 +64,11 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(1422, 1023);
+            ClientSize = new Size(1442, 1023);
             Controls.Add(btn_RegisterPelanggan);
             Controls.Add(btn_LoginPelanggan);
             Name = "AuthPelanggan";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AuthPelanggan";
             ((System.ComponentModel.ISupportInitialize)btn_LoginPelanggan).EndInit();
             ((System.ComponentModel.ISupportInitialize)btn_RegisterPelanggan).EndInit();

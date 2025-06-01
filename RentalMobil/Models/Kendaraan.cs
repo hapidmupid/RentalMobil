@@ -15,6 +15,6 @@ namespace RentalMobil.Models
         public string nomor_plat { get; set; }
         public decimal harga_sewa_perhari { get; set; }
         public string status { get; set; }
-        public string gambar { get; set; }
+
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace RentalMobil.Views
 {
-    partial class LoginPelangganForm
+    partial class LoginAdminForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,64 +28,64 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginPelangganForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginAdminForm));
+            btnSignIn = new PictureBox();
             tbPassword = new TextBox();
             tbUsername = new TextBox();
-            btnLogin = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)btnLogin).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnSignIn).BeginInit();
             SuspendLayout();
+            // 
+            // btnSignIn
+            // 
+            btnSignIn.BackColor = Color.Transparent;
+            btnSignIn.Image = (Image)resources.GetObject("btnSignIn.Image");
+            btnSignIn.Location = new Point(884, 481);
+            btnSignIn.Name = "btnSignIn";
+            btnSignIn.Size = new Size(497, 101);
+            btnSignIn.SizeMode = PictureBoxSizeMode.StretchImage;
+            btnSignIn.TabIndex = 0;
+            btnSignIn.TabStop = false;
+            btnSignIn.Click += btnSignIn_Click;
             // 
             // tbPassword
             // 
             tbPassword.BorderStyle = BorderStyle.None;
             tbPassword.Font = new Font("Montserrat Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            tbPassword.Location = new Point(918, 417);
+            tbPassword.Location = new Point(916, 416);
             tbPassword.Name = "tbPassword";
-            tbPassword.Size = new Size(415, 25);
-            tbPassword.TabIndex = 0;
+            tbPassword.Size = new Size(437, 25);
+            tbPassword.TabIndex = 1;
             // 
             // tbUsername
             // 
             tbUsername.BorderStyle = BorderStyle.None;
             tbUsername.Font = new Font("Montserrat Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            tbUsername.Location = new Point(918, 312);
+            tbUsername.Location = new Point(916, 311);
             tbUsername.Name = "tbUsername";
-            tbUsername.Size = new Size(415, 25);
-            tbUsername.TabIndex = 0;
+            tbUsername.Size = new Size(437, 25);
+            tbUsername.TabIndex = 1;
             // 
-            // btnLogin
-            // 
-            btnLogin.BackColor = Color.Transparent;
-            btnLogin.Image = (Image)resources.GetObject("btnLogin.Image");
-            btnLogin.Location = new Point(886, 465);
-            btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(502, 120);
-            btnLogin.SizeMode = PictureBoxSizeMode.Zoom;
-            btnLogin.TabIndex = 1;
-            btnLogin.TabStop = false;
-            btnLogin.Click += btnLogin_Click_1;
-            // 
-            // LoginPelangganForm
+            // LoginAdminForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(1422, 1023);
-            Controls.Add(btnLogin);
+            ClientSize = new Size(1442, 1023);
             Controls.Add(tbUsername);
             Controls.Add(tbPassword);
-            Name = "LoginPelangganForm";
-            Text = "LoginPelangganForm";
-            Load += LoginPelangganForm_Load;
-            ((System.ComponentModel.ISupportInitialize)btnLogin).EndInit();
+            Controls.Add(btnSignIn);
+            Name = "LoginAdminForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "LoginAdminForm";
+            ((System.ComponentModel.ISupportInitialize)btnSignIn).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
+        private PictureBox btnSignIn;
         private TextBox tbPassword;
         private TextBox tbUsername;
-        private PictureBox btnLogin;
     }
 }

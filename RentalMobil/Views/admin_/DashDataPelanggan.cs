@@ -1,5 +1,6 @@
 ﻿using RentalMobil.Controller;
 using RentalMobil.Models;
+using RentalMobil.Views.admin_;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,16 +11,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace RentalMobil.Views
+namespace RentalMobil.Views.admin_
 {
     public partial class DashDataPelanggan : Form
     {
-        private PelangganController _pelangganController = new PelangganController();
+        private PelangganController pelangganController = new PelangganController();
 
         public DashDataPelanggan()
         {
             InitializeComponent();
-            _pelangganController = new PelangganController();
+            pelangganController = new PelangganController();
             LoadData();
         }
 
@@ -31,7 +32,59 @@ namespace RentalMobil.Views
 
         private void LoadData()
         {
-            var pelangganList = _pelangganController.GetAllPelanggan();
+            var pelangganList = pelangganController.GetAllPelanggan();
+
+            // Nonaktifkan auto generate
+            dgvPelanggan.AutoGenerateColumns = false;
+
+            // Clear dulu kolomnya
+            dgvPelanggan.Columns.Clear();
+
+            // Tambahkan kolom yang diinginkan
+            dgvPelanggan.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "ID",
+                DataPropertyName = "id_pelanggan",
+                Name = "id_pelanggan"
+            });
+
+            dgvPelanggan.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Email",
+                DataPropertyName = "email",
+                Name = "email"
+            });
+
+            dgvPelanggan.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Nama",
+                DataPropertyName = "nama",
+                Name = "nama"
+            });
+
+            dgvPelanggan.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Alamat",
+                DataPropertyName = "alamat",
+                Name = "alamat"
+            });
+
+            dgvPelanggan.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "No. Telepon",
+                DataPropertyName = "no_telp",
+                Name = "no_telp"
+            });
+
+            dgvPelanggan.EnableHeadersVisualStyles = false;
+            dgvPelanggan.GridColor = Color.FromArgb(120, 120, 120);
+            dgvPelanggan.BorderStyle = BorderStyle.None;
+            dgvPelanggan.RowTemplate.Height = 70;
+            dgvPelanggan.AllowUserToAddRows = false;
+            dgvPelanggan.AllowUserToResizeRows = false;
+            dgvPelanggan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvPelanggan.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+
             dgvPelanggan.DataSource = pelangganList;
         }
 
@@ -51,7 +104,7 @@ namespace RentalMobil.Views
 
                 if (result == DialogResult.Yes)
                 {
-                    bool success = _pelangganController.DeletePelanggan(id);
+                    bool success = pelangganController.DeletePelanggan(id);
                     if (success)
                     {
                         MessageBox.Show("Pelanggan berhasil dihapus", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -76,14 +129,14 @@ namespace RentalMobil.Views
                 DataGridViewRow selectedRow = dgvPelanggan.SelectedRows[0];
                 int id = Convert.ToInt32(selectedRow.Cells["id_pelanggan"].Value);
 
-                Pelanggan pelanggan = _pelangganController.GetPelangganById(id);
+                Pelanggan pelanggan = pelangganController.GetPelangganById(id);
                 if (pelanggan != null)
                 {
                     using (var editForm = new EditDataPelanggan(pelanggan))
                     {
                         if (editForm.ShowDialog() == DialogResult.OK)
                         {
-                            bool success = _pelangganController.UpdatePelanggan(editForm.Pelanggan);
+                            bool success = pelangganController.UpdatePelanggan(editForm.Pelanggan);
                             if (success)
                             {
                                 MessageBox.Show("Data pelanggan berhasil diperbarui", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -101,6 +154,20 @@ namespace RentalMobil.Views
             {
                 MessageBox.Show("Pilih pelanggan yang akan diedit", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void btnBeranda_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var dashboardAdmin = new DashboardAdmin();
+            dashboardAdmin.Show();
+        }
+
+        private void btnKelolaKendaraan_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var kelolaKendaraan = new DashDataKendaraan();
+            kelolaKendaraan.Show();
         }
     }
 }

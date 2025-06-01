@@ -1,4 +1,5 @@
 using RentalMobil.Views;
+using RentalMobil.Views.admin_;
 
 namespace RentalMobil
 {
@@ -13,7 +14,7 @@ namespace RentalMobil
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new AuthForm());
+            Application.Run(new DashboardAdmin());
         }
     }
 }

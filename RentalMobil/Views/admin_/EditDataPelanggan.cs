@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace RentalMobil.Views
+namespace RentalMobil.Views.admin_
 {
     public partial class EditDataPelanggan : Form
     {
@@ -47,6 +47,11 @@ namespace RentalMobil.Views
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void EditDataPelanggan_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

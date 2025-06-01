@@ -42,7 +42,7 @@
             // 
             textBox1.BorderStyle = BorderStyle.None;
             textBox1.Font = new Font("Montserrat Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(918, 312);
+            textBox1.Location = new Point(918, 733);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(422, 25);
             textBox1.TabIndex = 0;
@@ -78,7 +78,7 @@
             // 
             textBox5.BorderStyle = BorderStyle.None;
             textBox5.Font = new Font("Montserrat Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox5.Location = new Point(918, 732);
+            textBox5.Location = new Point(918, 313);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(422, 25);
             textBox5.TabIndex = 0;
@@ -100,7 +100,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(1422, 1023);
+            ClientSize = new Size(1442, 1023);
             Controls.Add(btnRegister);
             Controls.Add(textBox5);
             Controls.Add(textBox4);
@@ -108,6 +108,7 @@
             Controls.Add(textBox2);
             Controls.Add(textBox1);
             Name = "RegisterPelangganForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "RegisterPelangganForm";
             Load += RegisterPelangganForm_Load;
             ((System.ComponentModel.ISupportInitialize)btnRegister).EndInit();

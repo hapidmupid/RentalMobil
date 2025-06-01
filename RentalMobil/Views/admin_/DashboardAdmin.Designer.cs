@@ -1,4 +1,4 @@
-﻿namespace RentalMobil.Views
+﻿namespace RentalMobil.Views.admin_
 {
     partial class DashboardAdmin
     {
@@ -34,16 +34,18 @@
             lblPendapatanBulanIni = new Label();
             dgvTransaksiTerbaru = new DataGridView();
             pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            pictureBox3 = new PictureBox();
-            pictureBox4 = new PictureBox();
-            pictureBox5 = new PictureBox();
+            btnKelolaPelanggan = new PictureBox();
+            btnKelolaKendaraan = new PictureBox();
+            btnKelolaTransaksi = new PictureBox();
+            btnLihatRiwayat = new PictureBox();
+            btnLogOut = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dgvTransaksiTerbaru).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnKelolaPelanggan).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnKelolaKendaraan).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnKelolaTransaksi).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnLihatRiwayat).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnLogOut).BeginInit();
             SuspendLayout();
             // 
             // lblTotalKendaraan
@@ -52,7 +54,7 @@
             lblTotalKendaraan.BackColor = Color.Transparent;
             lblTotalKendaraan.Font = new Font("Montserrat Black", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTotalKendaraan.ForeColor = SystemColors.Control;
-            lblTotalKendaraan.Location = new Point(546, 146);
+            lblTotalKendaraan.Location = new Point(560, 146);
             lblTotalKendaraan.Name = "lblTotalKendaraan";
             lblTotalKendaraan.Size = new Size(102, 111);
             lblTotalKendaraan.TabIndex = 0;
@@ -107,74 +109,91 @@
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
             // 
-            // pictureBox2
+            // btnKelolaPelanggan
             // 
-            pictureBox2.BackColor = Color.Transparent;
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(42, 267);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(187, 40);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 3;
-            pictureBox2.TabStop = false;
+            btnKelolaPelanggan.BackColor = Color.Transparent;
+            btnKelolaPelanggan.Image = (Image)resources.GetObject("btnKelolaPelanggan.Image");
+            btnKelolaPelanggan.Location = new Point(52, 226);
+            btnKelolaPelanggan.Name = "btnKelolaPelanggan";
+            btnKelolaPelanggan.Size = new Size(225, 94);
+            btnKelolaPelanggan.SizeMode = PictureBoxSizeMode.Zoom;
+            btnKelolaPelanggan.TabIndex = 3;
+            btnKelolaPelanggan.TabStop = false;
+            btnKelolaPelanggan.Click += btnKelolaPelanggan_Click;
             // 
-            // pictureBox3
+            // btnKelolaKendaraan
             // 
-            pictureBox3.BackColor = Color.Transparent;
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(42, 341);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(187, 40);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 3;
-            pictureBox3.TabStop = false;
+            btnKelolaKendaraan.BackColor = Color.Transparent;
+            btnKelolaKendaraan.Image = (Image)resources.GetObject("btnKelolaKendaraan.Image");
+            btnKelolaKendaraan.Location = new Point(52, 300);
+            btnKelolaKendaraan.Name = "btnKelolaKendaraan";
+            btnKelolaKendaraan.Size = new Size(225, 94);
+            btnKelolaKendaraan.SizeMode = PictureBoxSizeMode.Zoom;
+            btnKelolaKendaraan.TabIndex = 3;
+            btnKelolaKendaraan.TabStop = false;
+            btnKelolaKendaraan.Click += btnKelolaKendaraan_Click;
             // 
-            // pictureBox4
+            // btnKelolaTransaksi
             // 
-            pictureBox4.BackColor = Color.Transparent;
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(42, 415);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(187, 40);
-            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox4.TabIndex = 3;
-            pictureBox4.TabStop = false;
+            btnKelolaTransaksi.BackColor = Color.Transparent;
+            btnKelolaTransaksi.Image = (Image)resources.GetObject("btnKelolaTransaksi.Image");
+            btnKelolaTransaksi.Location = new Point(52, 374);
+            btnKelolaTransaksi.Name = "btnKelolaTransaksi";
+            btnKelolaTransaksi.Size = new Size(225, 94);
+            btnKelolaTransaksi.SizeMode = PictureBoxSizeMode.Zoom;
+            btnKelolaTransaksi.TabIndex = 3;
+            btnKelolaTransaksi.TabStop = false;
             // 
-            // pictureBox5
+            // btnLihatRiwayat
             // 
-            pictureBox5.BackColor = Color.Transparent;
-            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(42, 487);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(187, 40);
-            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox5.TabIndex = 3;
-            pictureBox5.TabStop = false;
+            btnLihatRiwayat.BackColor = Color.Transparent;
+            btnLihatRiwayat.Image = (Image)resources.GetObject("btnLihatRiwayat.Image");
+            btnLihatRiwayat.Location = new Point(52, 478);
+            btnLihatRiwayat.Name = "btnLihatRiwayat";
+            btnLihatRiwayat.Size = new Size(187, 40);
+            btnLihatRiwayat.SizeMode = PictureBoxSizeMode.Zoom;
+            btnLihatRiwayat.TabIndex = 3;
+            btnLihatRiwayat.TabStop = false;
+            // 
+            // btnLogOut
+            // 
+            btnLogOut.BackColor = Color.Transparent;
+            btnLogOut.Image = (Image)resources.GetObject("btnLogOut.Image");
+            btnLogOut.Location = new Point(22, 549);
+            btnLogOut.Name = "btnLogOut";
+            btnLogOut.Size = new Size(183, 36);
+            btnLogOut.SizeMode = PictureBoxSizeMode.Zoom;
+            btnLogOut.TabIndex = 3;
+            btnLogOut.TabStop = false;
+            btnLogOut.Click += btnLogOut_Click;
             // 
             // DashboardAdmin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(1422, 1023);
-            Controls.Add(pictureBox5);
-            Controls.Add(pictureBox4);
-            Controls.Add(pictureBox3);
-            Controls.Add(pictureBox2);
+            ClientSize = new Size(1442, 1023);
+            Controls.Add(btnLogOut);
+            Controls.Add(btnLihatRiwayat);
+            Controls.Add(btnKelolaTransaksi);
+            Controls.Add(btnKelolaKendaraan);
+            Controls.Add(btnKelolaPelanggan);
             Controls.Add(pictureBox1);
             Controls.Add(dgvTransaksiTerbaru);
             Controls.Add(lblPendapatanBulanIni);
             Controls.Add(lblTotalPelanggan);
             Controls.Add(lblTotalKendaraan);
             Name = "DashboardAdmin";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "DashboardAdmin";
             Load += DashboardAdmin_Load;
             ((System.ComponentModel.ISupportInitialize)dgvTransaksiTerbaru).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnKelolaPelanggan).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnKelolaKendaraan).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnKelolaTransaksi).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnLihatRiwayat).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnLogOut).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -186,9 +205,10 @@
         private Label lblPendapatanBulanIni;
         private DataGridView dgvTransaksiTerbaru;
         private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox3;
-        private PictureBox pictureBox4;
-        private PictureBox pictureBox5;
+        private PictureBox btnKelolaPelanggan;
+        private PictureBox btnKelolaKendaraan;
+        private PictureBox btnKelolaTransaksi;
+        private PictureBox btnLihatRiwayat;
+        private PictureBox btnLogOut;
     }
 }

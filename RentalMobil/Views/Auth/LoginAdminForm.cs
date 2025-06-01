@@ -1,5 +1,6 @@
 ﻿using RentalMobil.Controller;
 using RentalMobil.Models;
+using RentalMobil.Views.admin_;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,10 +36,10 @@ namespace RentalMobil.Views
             if (admin != null)
             {
                 MessageBox.Show($"Selamat datang, {admin.nama}!");
-
-                DashboardAdmin dashboard = new DashboardAdmin();
-                dashboard.Show();
                 this.Hide();
+                var dashboardAdmin = new DashboardAdmin();
+                dashboardAdmin.Show();
+                
             }
             else
             {

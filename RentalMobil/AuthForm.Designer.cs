@@ -64,10 +64,11 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(1422, 1023);
+            ClientSize = new Size(1442, 1023);
             Controls.Add(btnLoginPelanggan);
             Controls.Add(btnLoginAdmin);
             Name = "AuthForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AuthForm";
             Load += AuthForm_Load;
             ((System.ComponentModel.ISupportInitialize)btnLoginAdmin).EndInit();

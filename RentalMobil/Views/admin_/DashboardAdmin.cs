@@ -1,5 +1,6 @@
 ﻿using Npgsql;
 using RentalMobil.Models;
+using RentalMobil.Views.admin_;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace RentalMobil.Views
+namespace RentalMobil.Views.admin_
 {
     public partial class DashboardAdmin : Form
     {
@@ -26,7 +27,7 @@ namespace RentalMobil.Views
             LoadTransaksiTerbaru();
             dgvTransaksiTerbaru.EnableHeadersVisualStyles = false;
             dgvTransaksiTerbaru.BackgroundColor = Color.FromArgb(80, 80, 80); // #505050
-            dgvTransaksiTerbaru.GridColor = Color.FromArgb(120,120,120);
+            dgvTransaksiTerbaru.GridColor = Color.FromArgb(120, 120, 120);
             dgvTransaksiTerbaru.BorderStyle = BorderStyle.None;
 
             // Header
@@ -44,8 +45,8 @@ namespace RentalMobil.Views
             // Baris biasa
             dgvTransaksiTerbaru.DefaultCellStyle.BackColor = Color.FromArgb(50, 50, 50);
             dgvTransaksiTerbaru.DefaultCellStyle.ForeColor = Color.White;
-            dgvTransaksiTerbaru.DefaultCellStyle.SelectionBackColor = Color.FromArgb(220,220,220);
-            dgvTransaksiTerbaru.DefaultCellStyle.SelectionForeColor = Color.FromArgb(40,40,40);
+            dgvTransaksiTerbaru.DefaultCellStyle.SelectionBackColor = Color.FromArgb(220, 220, 220);
+            dgvTransaksiTerbaru.DefaultCellStyle.SelectionForeColor = Color.FromArgb(40, 40, 40);
             dgvTransaksiTerbaru.DefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Regular);
             dgvTransaksiTerbaru.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
@@ -171,6 +172,27 @@ namespace RentalMobil.Views
         private void dgvTransaksiTerbaru_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnKelolaPelanggan_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var kelolaPelanggan = new DashDataPelanggan();
+            kelolaPelanggan.Show();
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var authForm = new AuthForm();
+            authForm.Show();
+        }
+
+        private void btnKelolaKendaraan_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var kelolaKendaraan = new DashDataKendaraan();
+            kelolaKendaraan.Show();
         }
     }
 }
