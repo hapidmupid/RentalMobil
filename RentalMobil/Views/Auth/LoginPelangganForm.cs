@@ -1,5 +1,6 @@
 ﻿using RentalMobil.Controller;
 using RentalMobil.Views.admin_;
+using RentalMobil.Views.pelanggan_;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,8 +32,8 @@ namespace RentalMobil.Views
                 
                 MessageBox.Show($"Selamat datang, {pelanggan.nama}!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
-                var dashboardAdmin = new DashboardAdmin();
-                dashboardAdmin.Show();
+                var dashboardPelanggan = new DashboardPelanggan();
+                dashboardPelanggan.Show();
 
             }
             else
