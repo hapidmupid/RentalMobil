@@ -77,13 +77,45 @@ namespace RentalMobil.Views.admin_
             });
 
             dgvPelanggan.EnableHeadersVisualStyles = false;
+            dgvPelanggan.BackgroundColor = Color.FromArgb(80, 80, 80); // #505050
             dgvPelanggan.GridColor = Color.FromArgb(120, 120, 120);
             dgvPelanggan.BorderStyle = BorderStyle.None;
+
+            // Header
+            dgvPelanggan.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(80, 80, 80);
+            dgvPelanggan.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvPelanggan.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            dgvPelanggan.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            // Trik tambahan agar teks terlihat benar-benar di tengah (secara vertikal)
+            dgvPelanggan.ColumnHeadersDefaultCellStyle.Padding = new Padding(0, 15, 0, 15); // top padding bisa kamu sesuaikan
+
+            dgvPelanggan.ColumnHeadersHeight = 75;// Atur sesuai kebutuhan
+
+
+            // Baris biasa
+            dgvPelanggan.DefaultCellStyle.BackColor = Color.FromArgb(50, 50, 50);
+            dgvPelanggan.DefaultCellStyle.ForeColor = Color.White;
+            dgvPelanggan.DefaultCellStyle.SelectionBackColor = Color.FromArgb(220, 220, 220);
+            dgvPelanggan.DefaultCellStyle.SelectionForeColor = Color.FromArgb(40, 40, 40);
+            dgvPelanggan.DefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+            dgvPelanggan.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            // Alternating row color
+            dgvPelanggan.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(60, 60, 60);
+
+            // Lain-lain
             dgvPelanggan.RowTemplate.Height = 70;
             dgvPelanggan.AllowUserToAddRows = false;
             dgvPelanggan.AllowUserToResizeRows = false;
+            dgvPelanggan.ReadOnly = true;
+
             dgvPelanggan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvPelanggan.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+
+            dgvPelanggan.RowHeadersVisible = false;
+            dgvPelanggan.AllowUserToResizeColumns = false;
+            dgvPelanggan.AllowUserToOrderColumns = false;
 
             dgvPelanggan.DataSource = pelangganList;
         }

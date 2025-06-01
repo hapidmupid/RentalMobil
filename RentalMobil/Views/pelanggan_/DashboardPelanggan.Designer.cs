@@ -34,11 +34,13 @@
             btnLogOut = new PictureBox();
             dataGridView1 = new DataGridView();
             pictureBox2 = new PictureBox();
+            pictureBox3 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnLihatRiwayat).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnLogOut).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -96,6 +98,18 @@
             pictureBox2.TabStop = false;
             pictureBox2.Click += pictureBox2_Click;
             // 
+            // pictureBox3
+            // 
+            pictureBox3.BackColor = Color.Transparent;
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(53, 285);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(155, 35);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 16;
+            pictureBox3.TabStop = false;
+            pictureBox3.Click += pictureBox3_Click;
+            // 
             // DashboardPelanggan
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -105,6 +119,7 @@
             Controls.Add(pictureBox2);
             Controls.Add(dataGridView1);
             Controls.Add(btnLogOut);
+            Controls.Add(pictureBox3);
             Controls.Add(btnLihatRiwayat);
             Controls.Add(pictureBox1);
             Name = "DashboardPelanggan";
@@ -115,6 +130,7 @@
             ((System.ComponentModel.ISupportInitialize)btnLogOut).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
         }
 
@@ -125,5 +141,6 @@
         private PictureBox btnLogOut;
         private DataGridView dataGridView1;
         private PictureBox pictureBox2;
+        private PictureBox pictureBox3;
     }
 }

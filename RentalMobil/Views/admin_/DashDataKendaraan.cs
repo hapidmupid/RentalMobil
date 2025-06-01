@@ -83,14 +83,46 @@ namespace RentalMobil.Views.admin_
 
             // Styling DataGridView
             dgvKendaraan.EnableHeadersVisualStyles = false;
+            dgvKendaraan.EnableHeadersVisualStyles = false;
+            dgvKendaraan.BackgroundColor = Color.FromArgb(80, 80, 80); // #505050
             dgvKendaraan.GridColor = Color.FromArgb(120, 120, 120);
             dgvKendaraan.BorderStyle = BorderStyle.None;
-            dgvKendaraan.RowTemplate.Height = 40;
+
+            // Header
+            dgvKendaraan.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(80, 80, 80);
+            dgvKendaraan.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvKendaraan.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            dgvKendaraan.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            // Trik tambahan agar teks terlihat benar-benar di tengah (secara vertikal)
+            dgvKendaraan.ColumnHeadersDefaultCellStyle.Padding = new Padding(0, 15, 0, 15); // top padding bisa kamu sesuaikan
+
+            dgvKendaraan.ColumnHeadersHeight = 75;// Atur sesuai kebutuhan
+
+
+            // Baris biasa
+            dgvKendaraan.DefaultCellStyle.BackColor = Color.FromArgb(50, 50, 50);
+            dgvKendaraan.DefaultCellStyle.ForeColor = Color.White;
+            dgvKendaraan.DefaultCellStyle.SelectionBackColor = Color.FromArgb(220, 220, 220);
+            dgvKendaraan.DefaultCellStyle.SelectionForeColor = Color.FromArgb(40, 40, 40);
+            dgvKendaraan.DefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+            dgvKendaraan.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            // Alternating row color
+            dgvKendaraan.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(60, 60, 60);
+
+            // Lain-lain
+            dgvKendaraan.RowTemplate.Height = 70;
             dgvKendaraan.AllowUserToAddRows = false;
             dgvKendaraan.AllowUserToResizeRows = false;
+            dgvKendaraan.ReadOnly = true;
+
             dgvKendaraan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvKendaraan.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
 
+            dgvKendaraan.RowHeadersVisible = false;
+            dgvKendaraan.AllowUserToResizeColumns = false;
+            dgvKendaraan.AllowUserToOrderColumns = false;
             dgvKendaraan.DataSource = kendaraanList;
         }
 
