@@ -45,7 +45,8 @@ namespace RentalMobil.Views.admin_
             {
                 HeaderText = "ID",
                 DataPropertyName = "id_pelanggan",
-                Name = "id_pelanggan"
+                Name = "id_pelanggan",
+                Width = 50
             });
 
             dgvPelanggan.Columns.Add(new DataGridViewTextBoxColumn
@@ -110,10 +111,17 @@ namespace RentalMobil.Views.admin_
             dgvPelanggan.AllowUserToResizeRows = false;
             dgvPelanggan.ReadOnly = true;
 
-            dgvPelanggan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            //dgvPelanggan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvPelanggan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+            dgvPelanggan.Columns["email"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvPelanggan.Columns["nama"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvPelanggan.Columns["alamat"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvPelanggan.Columns["no_telp"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+
             dgvPelanggan.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
 
-            dgvPelanggan.RowHeadersVisible = false;
+            //dgvPelanggan.RowHeadersVisible = false;
             dgvPelanggan.AllowUserToResizeColumns = false;
             dgvPelanggan.AllowUserToOrderColumns = false;
 

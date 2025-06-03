@@ -120,7 +120,7 @@ namespace RentalMobil.Views.admin_
             dgvKendaraan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvKendaraan.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
 
-            dgvKendaraan.RowHeadersVisible = false;
+            //dgvKendaraan.RowHeadersVisible = false;
             dgvKendaraan.AllowUserToResizeColumns = false;
             dgvKendaraan.AllowUserToOrderColumns = false;
             dgvKendaraan.DataSource = kendaraanList;
