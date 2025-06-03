@@ -1,4 +1,5 @@
 ﻿using RentalMobil.Controller;
+using RentalMobil.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,10 +15,12 @@ namespace RentalMobil.Views.pelanggan_
     public partial class DashboardPelanggan : Form
     {
         private readonly KendaraanController kendaraanController;
-        public DashboardPelanggan()
+        public Pelanggan Pelanggan { get; private set; }
+        public DashboardPelanggan(Pelanggan pelanggan)
         {
             InitializeComponent();
             kendaraanController = new KendaraanController();
+            Pelanggan = pelanggan;
 
             // Pasangkan event click
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
@@ -153,6 +156,13 @@ namespace RentalMobil.Views.pelanggan_
             AuthForm authForm = new AuthForm();
             this.Hide();
             authForm.Show();
+        }
+
+        private void btnDataDiri_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            EditDataDiri dataDiriPelanggan = new EditDataDiri(Pelanggan);
+            dataDiriPelanggan.Show();
         }
     }
 }
