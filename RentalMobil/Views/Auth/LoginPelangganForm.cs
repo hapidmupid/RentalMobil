@@ -22,23 +22,36 @@ namespace RentalMobil.Views
 
         private void btnLogin_Click_1(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(tbUsername.Text) || string.IsNullOrWhiteSpace(tbPassword.Text))
+            {
+                MessageBox.Show("Username dan password harus diisi!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             string username = tbUsername.Text;
             string password = tbPassword.Text;
 
-            var pelanggan = AuthController.LoginPelanggan(username, password);
-
-            if (pelanggan != null)
+            try
             {
-                
-                MessageBox.Show($"Selamat datang, {pelanggan.nama}!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Hide();
-                var dashboardPelanggan = new DashboardPelanggan();
-                dashboardPelanggan.Show();
+                var pelanggan = AuthController.LoginPelanggan(username, password);
 
+                if (pelanggan != null)
+                {
+
+                    MessageBox.Show($"Selamat datang, {pelanggan.nama}!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Hide();
+                    var dashboardPelanggan = new DashboardPelanggan(pelanggan);
+                    dashboardPelanggan.Show();
+
+                }
+                else
+                {
+                    MessageBox.Show("Username atau password salah!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Username atau password salah!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Terjadi kesalahan: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -95,13 +95,45 @@ namespace RentalMobil.Views.pelanggan_
 
             // Styling DataGridView
             dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.BackgroundColor = Color.FromArgb(80, 80, 80); // #505050
             dataGridView1.GridColor = Color.FromArgb(120, 120, 120);
             dataGridView1.BorderStyle = BorderStyle.None;
-            dataGridView1.RowTemplate.Height = 40;
+
+            // Header
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(80, 80, 80);
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            // Trik tambahan agar teks terlihat benar-benar di tengah (secara vertikal)
+            dataGridView1.ColumnHeadersDefaultCellStyle.Padding = new Padding(0, 15, 0, 15); // top padding bisa kamu sesuaikan
+
+            dataGridView1.ColumnHeadersHeight = 75;// Atur sesuai kebutuhan
+
+
+            // Baris biasa
+            dataGridView1.DefaultCellStyle.BackColor = Color.FromArgb(50, 50, 50);
+            dataGridView1.DefaultCellStyle.ForeColor = Color.White;
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.FromArgb(220, 220, 220);
+            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.FromArgb(40, 40, 40);
+            dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+            dataGridView1.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            // Alternating row color
+            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(60, 60, 60);
+
+            // Lain-lain
+            dataGridView1.RowTemplate.Height = 70;
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.ReadOnly = true;
+
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.AllowUserToResizeColumns = false;
+            dataGridView1.AllowUserToOrderColumns = false;
 
             dataGridView1.DataSource = kendaraanList;
         }
@@ -121,11 +153,6 @@ namespace RentalMobil.Views.pelanggan_
             AuthForm authForm = new AuthForm();
             this.Hide();
             authForm.Show();
-        }
-
-        private void DashboardPelanggan_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

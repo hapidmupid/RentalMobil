@@ -92,7 +92,7 @@ namespace RentalMobil.Controller
             {
                 connection.Open();
                 string query = @"UPDATE pelanggan 
-                                SET nama = @nama, alamat = @alamat, no_telp = @no_telp, 
+                                SET nama = @nama, alamat = @alamat, no_telp = @no_telp, 7
                                     email = @email, username = @username, password = @password 
                                 WHERE id_pelanggan = @id";
                 using (NpgsqlCommand cmd = new NpgsqlCommand(query, connection))
@@ -110,6 +110,8 @@ namespace RentalMobil.Controller
                 }
             }
         }
+
+        
     }
 
 }
