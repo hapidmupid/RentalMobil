@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,6 +19,11 @@ namespace RentalMobil.Views.pelanggan_
         public Pelanggan Pelanggan { get; private set; }
         public DashboardPelanggan(Pelanggan pelanggan)
         {
+            if (pelanggan == null)
+            {
+                throw new ArgumentNullException(nameof(pelanggan), "Objek pelanggan tidak boleh null");
+            }
+
             InitializeComponent();
             kendaraanController = new KendaraanController();
             Pelanggan = pelanggan;
@@ -146,8 +152,18 @@ namespace RentalMobil.Views.pelanggan_
 
             if (dataGridView1.Columns[e.ColumnIndex].Name == "btnSewa" && e.RowIndex >= 0)
             {
-                var id = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["id_kendaraan"].Value);
-                MessageBox.Show($"Sewa kendaraan dengan ID: {id}", "Info");
+                // Get the selected vehicle data
+                var selectedKendaraan = (Kendaraan)dataGridView1.Rows[e.RowIndex].DataBoundItem;
+
+                // Open the rental form
+                using (var sewaForm = new SewaKendaraan(selectedKendaraan, Pelanggan))
+                {
+                    sewaForm.ShowDialog();
+                }
+                //}
+                //var sewaForm = new SewaKendaraan(selectedKendaraan, Pelanggan);
+
+                //sewaForm.Show();
             }
         }
 
@@ -160,9 +176,12 @@ namespace RentalMobil.Views.pelanggan_
 
         private void btnDataDiri_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            EditDataDiri dataDiriPelanggan = new EditDataDiri(Pelanggan);
+            EditDataDiri dataDiriPelanggan = new EditDataDiri(Pelanggan.id_pelanggan);
             dataDiriPelanggan.Show();
+            this.Hide();
+
         }
+
+
     }
 }

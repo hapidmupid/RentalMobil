@@ -82,13 +82,13 @@
             // 
             btnEdit.BackColor = Color.Transparent;
             btnEdit.Image = (Image)resources.GetObject("btnEdit.Image");
-            btnEdit.Location = new Point(409, 632);
+            btnEdit.Location = new Point(1155, 321);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(217, 59);
             btnEdit.SizeMode = PictureBoxSizeMode.Zoom;
             btnEdit.TabIndex = 20;
             btnEdit.TabStop = false;
-
+            btnEdit.Click += btnEdit_Click;
             // 
             // label1
             // 
@@ -150,8 +150,8 @@
             Controls.Add(btnLihatRiwayat);
             Controls.Add(pictureBox1);
             Name = "EditDataDiri";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "EditDataDiri";
-
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnLihatRiwayat).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

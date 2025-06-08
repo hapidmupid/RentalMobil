@@ -92,7 +92,7 @@ namespace RentalMobil.Controller
             {
                 connection.Open();
                 string query = @"UPDATE pelanggan 
-                                SET nama = @nama, alamat = @alamat, no_telp = @no_telp, 7
+                                SET nama = @nama,alamat = @alamat, no_telp = @no_telp,
                                     email = @email, username = @username, password = @password 
                                 WHERE id_pelanggan = @id";
                 using (NpgsqlCommand cmd = new NpgsqlCommand(query, connection))
@@ -111,7 +111,45 @@ namespace RentalMobil.Controller
             }
         }
 
-        
+
+        // Method khusus untuk update alamat saja
+        public bool UpdateAlamat(int idPelanggan, string alamatBaru)
+        {
+            using (NpgsqlConnection connection = Database.GetConnection())
+            {
+                connection.Open();
+                string query = "UPDATE pelanggan SET alamat = @alamat WHERE id_pelanggan = @id";
+
+                using (NpgsqlCommand cmd = new NpgsqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@id", idPelanggan);
+                    cmd.Parameters.AddWithValue("@alamat", alamatBaru ?? (object)DBNull.Value);
+
+                    int result = cmd.ExecuteNonQuery();
+                    return result > 0;
+                }
+            }
+        }
+
+        // Method untuk mendapatkan alamat pelanggan
+        public string GetAlamatPelanggan(int idPelanggan)
+        {
+            using (NpgsqlConnection connection = Database.GetConnection())
+            {
+                connection.Open();
+                string query = "SELECT alamat FROM pelanggan WHERE id_pelanggan = @id";
+
+                using (NpgsqlCommand cmd = new NpgsqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@id", idPelanggan);
+                    object result = cmd.ExecuteScalar();
+
+                    return result != null ? result.ToString() : string.Empty;
+                }
+            }
+        }
+
+
     }
 
 }
