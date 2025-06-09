@@ -37,6 +37,7 @@
             ClientSize = new Size(800, 450);
             Name = "Pembayaran";
             Text = "Pembayaran";
+            Load += Pembayaran_Load;
             ResumeLayout(false);
         }
 

@@ -86,7 +86,7 @@ namespace RentalMobil.Views.pelanggan_
 
         }
 
-       
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -112,6 +112,11 @@ namespace RentalMobil.Views.pelanggan_
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
+        }
+
+        private void Pembayaran_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

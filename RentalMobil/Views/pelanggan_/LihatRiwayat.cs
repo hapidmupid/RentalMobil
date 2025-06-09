@@ -78,7 +78,13 @@ namespace RentalMobil.Views.pelanggan_
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             BelumBayar formBelumBayar = new BelumBayar(_idPelanggan);
-            formBelumBayar.Show(); // atau ShowDialog() jika kamu mau bentuk popup modal
+            formBelumBayar.ShowDialog(); // atau ShowDialog() jika kamu mau bentuk popup modal
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadRiwayat();
+            
         }
     }
 }
