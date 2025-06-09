@@ -64,6 +64,7 @@
             btnLihatRiwayat.SizeMode = PictureBoxSizeMode.Zoom;
             btnLihatRiwayat.TabIndex = 16;
             btnLihatRiwayat.TabStop = false;
+            btnLihatRiwayat.Click += btnLihatRiwayat_Click;
             // 
             // btnLogOut
             // 
