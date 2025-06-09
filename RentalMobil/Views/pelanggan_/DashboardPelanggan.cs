@@ -153,20 +153,31 @@ namespace RentalMobil.Views.pelanggan_
 
             if (dataGridView1.Columns[e.ColumnIndex].Name == "btnSewa" && e.RowIndex >= 0)
             {
-                // Get the selected vehicle data
-                var selectedKendaraan = (Kendaraan)dataGridView1.Rows[e.RowIndex].DataBoundItem;
+                string status = dataGridView1.Rows[e.RowIndex].Cells["status"].Value?.ToString();
 
-                // Open the rental form
-                using (var sewaForm = new SewaKendaraan(selectedKendaraan, Pelanggan))
+                if (status == "tersedia")
                 {
-                    sewaForm.ShowDialog();
-                }
-                //}
-                //var sewaForm = new SewaKendaraan(selectedKendaraan, Pelanggan);
+                    int idKendaraan = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["id_kendaraan"].Value);
+                    Kendaraan kendaraan = kendaraanController.GetKendaraanById(idKendaraan);
+                    if (kendaraan != null)
+                    {
+                        SewaKendaraan sewaKendaraanForm = new SewaKendaraan(kendaraan, Pelanggan);
+                        sewaKendaraanForm.Show();
 
-                //sewaForm.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Data kendaraan tidak ditemukan.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Kendaraan ini tidak tersedia untuk disewa.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
+
+
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {

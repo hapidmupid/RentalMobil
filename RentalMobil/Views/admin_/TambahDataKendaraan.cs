@@ -26,8 +26,8 @@ namespace RentalMobil.Views.admin_
                 string.IsNullOrEmpty(tbModel.Text) ||
                 string.IsNullOrEmpty(tbTahun.Text) ||
                 string.IsNullOrEmpty(tbNoPlat.Text) ||
-                string.IsNullOrEmpty(tbHarga.Text) ||
-                string.IsNullOrEmpty(tbStatus.Text))
+                string.IsNullOrEmpty(tbHarga.Text))
+                //string.IsNullOrEmpty(tbStatus.Text))
 
 
             {
@@ -62,7 +62,7 @@ namespace RentalMobil.Views.admin_
                     tahun = Convert.ToInt32(tbTahun.Text),
                     nomor_plat = tbNoPlat.Text,
                     harga_sewa_perhari = Convert.ToDecimal(tbHarga.Text),
-                    status = tbStatus.Text
+                    status = "tersedia"
                 };
 
                 DialogResult = DialogResult.OK;
