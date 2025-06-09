@@ -129,13 +129,16 @@ namespace RentalMobil.Views.pelanggan_
                 return;
             }
 
-            // [2] Cegah multiple clicks
             btnSewa.Enabled = false;
 
             try
             {
-                // [3] Proses transaksi
-                bool success = _transaksiController.CreateTransaksi(
+                // Hitung total hari dan harga
+                int hari = (int)(dtpTanggalSelesai.Value.Date - dtpTanggalMulai.Value.Date).TotalDays;
+                decimal totalHarga = hari * _kendaraan.harga_sewa_perhari;
+
+                // Buat transaksi dan dapatkan ID transaksi
+                int idTransaksi = _transaksiController.CreateTransaksiWithReturnId(
                     _pelanggan.id_pelanggan,
                     _kendaraan.id_kendaraan,
                     dtpTanggalMulai.Value.Date,
@@ -143,9 +146,20 @@ namespace RentalMobil.Views.pelanggan_
                     _kendaraan.harga_sewa_perhari
                 );
 
-                if (success)
+                if (idTransaksi > 0)
                 {
-                    this.DialogResult = DialogResult.OK; // Auto-close form
+                    // Buka form Pembayaran dengan data transaksi
+                    var formPembayaran = new Pembayaran(
+                        idTransaksi,
+                        totalHarga,
+                        $"{_kendaraan.merk} {_kendaraan.model}"
+                    );
+
+                    if (formPembayaran.ShowDialog() == DialogResult.OK)
+                    {
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
                 }
                 else
                 {

@@ -29,6 +29,7 @@ namespace RentalMobil.Views.pelanggan_
             Pelanggan = pelanggan;
 
             // Pasangkan event click
+            dataGridView1.CellContentClick -= dataGridView1_CellContentClick;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
 
             LoadData();

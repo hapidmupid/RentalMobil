@@ -1,10 +1,7 @@
 ﻿using Npgsql;
 using RentalMobil.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace RentalMobil.Controller
 {
@@ -64,6 +61,67 @@ namespace RentalMobil.Controller
                                       MessageBoxButtons.OK,
                                       MessageBoxIcon.Error);
                         return false;
+                    }
+                }
+            }
+        }
+
+        public int CreateTransaksiWithReturnId(int idPelanggan, int idKendaraan,
+                                             DateTime tglSewa, DateTime tglKembali,
+                                             decimal hargaPerHari)
+        {
+            using (var conn = Database.GetConnection())
+            {
+                conn.Open();
+                using (var transaction = conn.BeginTransaction())
+                {
+                    try
+                    {
+                        // Hitung total hari dan harga
+                        int hari = (tglKembali - tglSewa).Days;
+                        decimal totalHarga = hari * hargaPerHari;
+
+                        // 1. Buat transaksi dan dapatkan ID
+                        string queryTransaksi = @"
+                            INSERT INTO transaksi 
+                            (id_pelanggan, id_kendaraan, tanggal_sewa, tanggal_kembali, total_harga, status_pembayaran) 
+                            VALUES (@id_pelanggan, @id_kendaraan, @tanggal_sewa, @tanggal_kembali, @total_harga, 'belum_lunas')
+                            RETURNING id_transaksi";
+
+                        using (var cmd = new NpgsqlCommand(queryTransaksi, conn, transaction))
+                        {
+                            cmd.Parameters.AddWithValue("@id_pelanggan", idPelanggan);
+                            cmd.Parameters.AddWithValue("@id_kendaraan", idKendaraan);
+                            cmd.Parameters.AddWithValue("@tanggal_sewa", tglSewa);
+                            cmd.Parameters.AddWithValue("@tanggal_kembali", tglKembali);
+                            cmd.Parameters.AddWithValue("@total_harga", totalHarga);
+
+                            int idTransaksi = Convert.ToInt32(cmd.ExecuteScalar());
+
+                            // 2. Update status kendaraan
+                            string queryUpdateKendaraan = @"
+                                UPDATE kendaraan 
+                                SET status = 'disewa' 
+                                WHERE id_kendaraan = @id_kendaraan";
+
+                            using (var cmdUpdate = new NpgsqlCommand(queryUpdateKendaraan, conn, transaction))
+                            {
+                                cmdUpdate.Parameters.AddWithValue("@id_kendaraan", idKendaraan);
+                                cmdUpdate.ExecuteNonQuery();
+                            }
+
+                            transaction.Commit();
+                            return idTransaksi;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        MessageBox.Show($"Error saat membuat transaksi: {ex.Message}",
+                                        "Database Error",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Error);
+                        return -1;
                     }
                 }
             }
