@@ -29,46 +29,47 @@
         private void InitializeComponent()
         {
             dgRiwayat = new DataGridView();
-            btnBelumBayar = new PictureBox();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dgRiwayat).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnBelumBayar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // dgRiwayat
             // 
             dgRiwayat.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgRiwayat.Location = new Point(229, 29);
+            dgRiwayat.Location = new Point(225, 77);
             dgRiwayat.Name = "dgRiwayat";
             dgRiwayat.RowHeadersWidth = 51;
             dgRiwayat.Size = new Size(827, 385);
             dgRiwayat.TabIndex = 0;
             dgRiwayat.CellContentClick += dgRiwayat_CellContentClick;
             // 
-            // btnBelumBayar
+            // pictureBox1
             // 
-            btnBelumBayar.Location = new Point(229, 433);
-            btnBelumBayar.Name = "btnBelumBayar";
-            btnBelumBayar.Size = new Size(125, 62);
-            btnBelumBayar.TabIndex = 1;
-            btnBelumBayar.TabStop = false;
+            pictureBox1.Location = new Point(44, 362);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(125, 58);
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // LihatRiwayat
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1096, 524);
-            Controls.Add(btnBelumBayar);
+            Controls.Add(pictureBox1);
             Controls.Add(dgRiwayat);
             Name = "LihatRiwayat";
             Text = "LihatRiwayat";
             ((System.ComponentModel.ISupportInitialize)dgRiwayat).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnBelumBayar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private DataGridView dgRiwayat;
-        private PictureBox btnBelumBayar;
+        private PictureBox pictureBox1;
     }
 }

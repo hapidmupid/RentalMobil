@@ -69,9 +69,16 @@ namespace RentalMobil.Views.pelanggan_
         }
 
 
+
         private void dgRiwayat_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            BelumBayar formBelumBayar = new BelumBayar(_idPelanggan);
+            formBelumBayar.Show(); // atau ShowDialog() jika kamu mau bentuk popup modal
         }
     }
 }
