@@ -1,6 +1,7 @@
 ﻿using Npgsql;
 using RentalMobil.Models;
 using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace RentalMobil.Controller
@@ -126,5 +127,82 @@ namespace RentalMobil.Controller
                 }
             }
         }
+
+        public DataTable GetRiwayatByPelanggan(int idPelanggan)
+        {
+            DataTable dataTable = new DataTable();
+
+            using (var conn = Database.GetConnection())
+            {
+                conn.Open();
+                string query = @"
+            SELECT 
+                t.id_transaksi,
+                k.merk || ' ' || k.model as kendaraan,
+                t.tanggal_sewa,
+                t.tanggal_kembali,
+                t.total_harga,
+                t.status_pembayaran
+            FROM 
+                transaksi t
+            JOIN 
+                kendaraan k ON t.id_kendaraan = k.id_kendaraan
+            WHERE 
+                t.id_pelanggan = @id_pelanggan
+            ORDER BY 
+                t.tanggal_sewa DESC";
+
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id_pelanggan", idPelanggan);
+
+                    using (var adapter = new NpgsqlDataAdapter(cmd))
+                    {
+                        adapter.Fill(dataTable);
+                    }
+                }
+            }
+
+            return dataTable;
+        }
+
+        public DataTable GetTransaksiBelumBayar(int idPelanggan)
+        {
+            DataTable dataTable = new DataTable();
+
+            using (var conn = Database.GetConnection())
+            {
+                conn.Open();
+                string query = @"
+            SELECT 
+                t.id_transaksi,
+                k.merk || ' ' || k.model as kendaraan,
+                t.tanggal_sewa,
+                t.tanggal_kembali,
+                t.total_harga,
+                t.status_pembayaran
+            FROM 
+                transaksi t
+            JOIN 
+                kendaraan k ON t.id_kendaraan = k.id_kendaraan
+            WHERE 
+                t.id_pelanggan = @id_pelanggan
+                AND t.status_pembayaran = 'belum_lunas'
+            ORDER BY 
+                t.tanggal_sewa DESC";
+
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id_pelanggan", idPelanggan);
+                    using (var adapter = new NpgsqlDataAdapter(cmd))
+                    {
+                        adapter.Fill(dataTable);
+                    }
+                }
+            }
+
+            return dataTable;
+        }
+
     }
 }

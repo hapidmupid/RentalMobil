@@ -9,7 +9,7 @@ namespace RentalMobil.Models
 {
     class Database
     {
-        private static string connectionString = "Host=localhost;Username=postgres;Password=hafid123;Database=dbRentalMobil";
+        private static string connectionString = "Host=localhost;Username=postgres;Password=12345;Database=dbRentalMobil";
 
         public static NpgsqlConnection GetConnection()
         {
