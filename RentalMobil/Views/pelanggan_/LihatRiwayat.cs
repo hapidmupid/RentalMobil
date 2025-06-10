@@ -32,9 +32,6 @@ namespace RentalMobil.Views.pelanggan_
             LoadRiwayat();
         }
 
-        public LihatRiwayat()
-        {
-        }
 
         private void LoadRiwayat()
         {
