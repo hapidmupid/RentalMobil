@@ -97,5 +97,12 @@ namespace RentalMobil.Views
         {
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            var authpelanggan = new AuthPelanggan();
+            authpelanggan.Show();
+            this.Hide();
+        }
     }
 }

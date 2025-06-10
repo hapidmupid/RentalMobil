@@ -32,9 +32,15 @@
             dgRiwayat = new DataGridView();
             pictureBox1 = new PictureBox();
             btnRefresh = new PictureBox();
+            btnDataDiri = new PictureBox();
+            btnLihatRiwayat = new PictureBox();
+            btnBeranda = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dgRiwayat).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnRefresh).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnDataDiri).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnLihatRiwayat).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnBeranda).BeginInit();
             SuspendLayout();
             // 
             // dgRiwayat
@@ -71,21 +77,63 @@
             btnRefresh.TabStop = false;
             btnRefresh.Click += btnRefresh_Click;
             // 
+            // btnDataDiri
+            // 
+            btnDataDiri.BackColor = Color.Transparent;
+            btnDataDiri.Image = (Image)resources.GetObject("btnDataDiri.Image");
+            btnDataDiri.Location = new Point(50, 287);
+            btnDataDiri.Name = "btnDataDiri";
+            btnDataDiri.Size = new Size(155, 35);
+            btnDataDiri.SizeMode = PictureBoxSizeMode.Zoom;
+            btnDataDiri.TabIndex = 19;
+            btnDataDiri.TabStop = false;
+            btnDataDiri.Click += btnDataDiri_Click;
+            // 
+            // btnLihatRiwayat
+            // 
+            btnLihatRiwayat.BackColor = Color.Transparent;
+            btnLihatRiwayat.Image = (Image)resources.GetObject("btnLihatRiwayat.Image");
+            btnLihatRiwayat.Location = new Point(55, 206);
+            btnLihatRiwayat.Name = "btnLihatRiwayat";
+            btnLihatRiwayat.Size = new Size(263, 69);
+            btnLihatRiwayat.SizeMode = PictureBoxSizeMode.Zoom;
+            btnLihatRiwayat.TabIndex = 18;
+            btnLihatRiwayat.TabStop = false;
+            // 
+            // btnBeranda
+            // 
+            btnBeranda.BackColor = Color.Transparent;
+            btnBeranda.Image = (Image)resources.GetObject("btnBeranda.Image");
+            btnBeranda.Location = new Point(55, 151);
+            btnBeranda.Name = "btnBeranda";
+            btnBeranda.Size = new Size(150, 45);
+            btnBeranda.SizeMode = PictureBoxSizeMode.Zoom;
+            btnBeranda.TabIndex = 17;
+            btnBeranda.TabStop = false;
+            btnBeranda.Click += btnBeranda_Click;
+            // 
             // LihatRiwayat
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1442, 1023);
+            Controls.Add(btnDataDiri);
+            Controls.Add(btnLihatRiwayat);
+            Controls.Add(btnBeranda);
             Controls.Add(btnRefresh);
             Controls.Add(pictureBox1);
             Controls.Add(dgRiwayat);
             Name = "LihatRiwayat";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "LihatRiwayat";
+            Load += LihatRiwayat_Load;
             ((System.ComponentModel.ISupportInitialize)dgRiwayat).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnRefresh).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnDataDiri).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnLihatRiwayat).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnBeranda).EndInit();
             ResumeLayout(false);
         }
 
@@ -94,5 +142,8 @@
         private DataGridView dgRiwayat;
         private PictureBox pictureBox1;
         private PictureBox btnRefresh;
+        private PictureBox btnDataDiri;
+        private PictureBox btnLihatRiwayat;
+        private PictureBox btnBeranda;
     }
 }

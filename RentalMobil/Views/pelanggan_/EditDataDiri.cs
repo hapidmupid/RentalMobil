@@ -63,7 +63,7 @@ namespace RentalMobil.Views.pelanggan_
             }
 
             this.Hide();
-            var dashboardPelanggan = new DashboardPelanggan(pelanggan); // Pastikan mengirim objek pelanggan
+            var dashboardPelanggan = new DashboardPelanggan(pelanggan);
             dashboardPelanggan.Show();
         }
 

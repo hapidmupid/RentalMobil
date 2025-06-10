@@ -47,9 +47,9 @@
             // 
             pictureBox3.BackColor = Color.Transparent;
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(46, 273);
+            pictureBox3.Location = new Point(62, 273);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(282, 74);
+            pictureBox3.Size = new Size(266, 74);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 19;
             pictureBox3.TabStop = false;

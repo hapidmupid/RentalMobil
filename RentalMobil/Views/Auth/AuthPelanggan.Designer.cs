@@ -31,8 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AuthPelanggan));
             btn_LoginPelanggan = new PictureBox();
             btn_RegisterPelanggan = new PictureBox();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)btn_LoginPelanggan).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_RegisterPelanggan).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // btn_LoginPelanggan
@@ -59,12 +61,25 @@
             btn_RegisterPelanggan.TabStop = false;
             btn_RegisterPelanggan.Click += btn_RegisterPelanggan_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(899, 37);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(38, 34);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
             // AuthPelanggan
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1442, 1023);
+            Controls.Add(pictureBox1);
             Controls.Add(btn_RegisterPelanggan);
             Controls.Add(btn_LoginPelanggan);
             Name = "AuthPelanggan";
@@ -72,6 +87,7 @@
             Text = "AuthPelanggan";
             ((System.ComponentModel.ISupportInitialize)btn_LoginPelanggan).EndInit();
             ((System.ComponentModel.ISupportInitialize)btn_RegisterPelanggan).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -79,5 +95,6 @@
 
         private PictureBox btn_LoginPelanggan;
         private PictureBox btn_RegisterPelanggan;
+        private PictureBox pictureBox1;
     }
 }

@@ -196,11 +196,20 @@ namespace RentalMobil.Views.pelanggan_
 
         private void btnLihatRiwayat_Click(object sender, EventArgs e)
         {
-            // Ambil id_pelanggan dari user yang login
-            int idPelanggan = Pelanggan.id_pelanggan; // Corrected to access the 'id_pelanggan' property of the 'Pelanggan' instance
 
-            var formRiwayat = new LihatRiwayat(idPelanggan);
-            formRiwayat.ShowDialog();
+            LihatRiwayat lihatRiwayat = new LihatRiwayat(Pelanggan.id_pelanggan);
+            lihatRiwayat.Show();
+            this.Hide();
+
+            //int idPelanggan = Pelanggan.id_pelanggan;
+
+            //var formRiwayat = new LihatRiwayat(idPelanggan);
+            //formRiwayat.ShowDialog();
+        }
+
+        private void DashboardPelanggan_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

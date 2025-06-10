@@ -30,5 +30,12 @@ namespace RentalMobil.Views
             var registerPelanggan = new RegisterPelangganForm();
             registerPelanggan.Show();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            var authform = new AuthForm();
+            authform.Show();
+            this.Hide();
+        }
     }
 }

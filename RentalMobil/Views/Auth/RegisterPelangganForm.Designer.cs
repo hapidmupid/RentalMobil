@@ -35,7 +35,9 @@
             textBox4 = new TextBox();
             textBox5 = new TextBox();
             btnRegister = new PictureBox();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)btnRegister).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // textBox1
@@ -95,12 +97,25 @@
             btnRegister.TabStop = false;
             btnRegister.Click += btnRegister_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(905, 38);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(38, 34);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
             // RegisterPelangganForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1442, 1023);
+            Controls.Add(pictureBox1);
             Controls.Add(btnRegister);
             Controls.Add(textBox5);
             Controls.Add(textBox4);
@@ -112,6 +127,7 @@
             Text = "RegisterPelangganForm";
             Load += RegisterPelangganForm_Load;
             ((System.ComponentModel.ISupportInitialize)btnRegister).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -124,5 +140,6 @@
         private TextBox textBox4;
         private TextBox textBox5;
         private PictureBox btnRegister;
+        private PictureBox pictureBox1;
     }
 }

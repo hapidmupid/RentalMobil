@@ -121,6 +121,50 @@ namespace RentalMobil.Views.pelanggan_
 
         private void LoadRiwayat()
         {
+
+            // Styling DataGridView
+            dgBelumBayar.EnableHeadersVisualStyles = false;
+            dgBelumBayar.BackgroundColor = Color.FromArgb(80, 80, 80); // #505050
+            dgBelumBayar.GridColor = Color.FromArgb(120, 120, 120);
+            dgBelumBayar.BorderStyle = BorderStyle.None;
+
+            // Header
+            dgBelumBayar.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(80, 80, 80);
+            dgBelumBayar.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgBelumBayar.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            dgBelumBayar.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            // Trik tambahan agar teks terlihat benar-benar di tengah (secara vertikal)
+            dgBelumBayar.ColumnHeadersDefaultCellStyle.Padding = new Padding(0, 15, 0, 15); // top padding bisa kamu sesuaikan
+
+            dgBelumBayar.ColumnHeadersHeight = 75;// Atur sesuai kebutuhan
+
+
+            // Baris biasa
+            dgBelumBayar.DefaultCellStyle.BackColor = Color.FromArgb(50, 50, 50);
+            dgBelumBayar.DefaultCellStyle.ForeColor = Color.White;
+            dgBelumBayar.DefaultCellStyle.SelectionBackColor = Color.FromArgb(220, 220, 220);
+            dgBelumBayar.DefaultCellStyle.SelectionForeColor = Color.FromArgb(40, 40, 40);
+            dgBelumBayar.DefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+            dgBelumBayar.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            // Alternating row color
+            dgBelumBayar.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(60, 60, 60);
+
+            // Lain-lain
+            dgBelumBayar.RowTemplate.Height = 70;
+            dgBelumBayar.AllowUserToAddRows = false;
+            dgBelumBayar.AllowUserToResizeRows = false;
+            dgBelumBayar.ReadOnly = true;
+
+            dgBelumBayar.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgBelumBayar.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+
+            dgBelumBayar.RowHeadersVisible = false;
+            dgBelumBayar.AllowUserToResizeColumns = false;
+            dgBelumBayar.AllowUserToOrderColumns = false;
+
+
             try
             {
                 DataTable dataRiwayat = _transaksiController.GetTransaksiBelumBayar(_idPelanggan);
@@ -178,9 +222,9 @@ namespace RentalMobil.Views.pelanggan_
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            // Ambil id_pelanggan dari user yang login
             var formRiwayat = new LihatRiwayat(_idPelanggan);
-            formRiwayat.ShowDialog();
+            formRiwayat.Show();
+            this.Hide();
         }
     }
 }

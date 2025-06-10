@@ -39,7 +39,7 @@ namespace RentalMobil.Views
                 this.Hide();
                 var dashboardAdmin = new DashboardAdmin();
                 dashboardAdmin.Show();
-                
+
             }
             else
             {
@@ -49,6 +49,13 @@ namespace RentalMobil.Views
             //this.Hide();
             //var dashboardAdmin = new DashboardAdmin();
             //dashboardAdmin.Show();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            var authform = new AuthForm();
+            authform.Show();
+            this.Hide();
         }
     }
 }

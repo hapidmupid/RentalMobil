@@ -1,4 +1,5 @@
 ﻿using RentalMobil.Controller;
+using RentalMobil.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -37,6 +38,52 @@ namespace RentalMobil.Views.pelanggan_
 
         private void LoadRiwayat()
         {
+
+            // Styling DataGridView
+            dgRiwayat.EnableHeadersVisualStyles = false;
+            dgRiwayat.BackgroundColor = Color.FromArgb(80, 80, 80); // #505050
+            dgRiwayat.GridColor = Color.FromArgb(120, 120, 120);
+            dgRiwayat.BorderStyle = BorderStyle.None;
+
+            // Header
+            dgRiwayat.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(80, 80, 80);
+            dgRiwayat.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgRiwayat.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            dgRiwayat.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            // Trik tambahan agar teks terlihat benar-benar di tengah (secara vertikal)
+            dgRiwayat.ColumnHeadersDefaultCellStyle.Padding = new Padding(0, 15, 0, 15); // top padding bisa kamu sesuaikan
+
+            dgRiwayat.ColumnHeadersHeight = 75;// Atur sesuai kebutuhan
+
+
+            // Baris biasa
+            dgRiwayat.DefaultCellStyle.BackColor = Color.FromArgb(50, 50, 50);
+            dgRiwayat.DefaultCellStyle.ForeColor = Color.White;
+            dgRiwayat.DefaultCellStyle.SelectionBackColor = Color.FromArgb(220, 220, 220);
+            dgRiwayat.DefaultCellStyle.SelectionForeColor = Color.FromArgb(40, 40, 40);
+            dgRiwayat.DefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+            dgRiwayat.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            // Alternating row color
+            dgRiwayat.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(60, 60, 60);
+
+            // Lain-lain
+            dgRiwayat.RowTemplate.Height = 70;
+            dgRiwayat.AllowUserToAddRows = false;
+            dgRiwayat.AllowUserToResizeRows = false;
+            dgRiwayat.ReadOnly = true;
+
+            dgRiwayat.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgRiwayat.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+
+            dgRiwayat.RowHeadersVisible = false;
+            dgRiwayat.AllowUserToResizeColumns = false;
+            dgRiwayat.AllowUserToOrderColumns = false;
+
+
+
+
             try
             {
                 DataTable dataRiwayat = _transaksiController.GetRiwayatByPelanggan(_idPelanggan);
@@ -78,13 +125,38 @@ namespace RentalMobil.Views.pelanggan_
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             BelumBayar formBelumBayar = new BelumBayar(_idPelanggan);
-            formBelumBayar.ShowDialog(); // atau ShowDialog() jika kamu mau bentuk popup modal
+            formBelumBayar.Show();
+            this.Hide();
+
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             LoadRiwayat();
-            
+
+        }
+
+        private void btnBeranda_Click(object sender, EventArgs e)
+        {
+            var pelanggan = new Pelanggan { id_pelanggan = _idPelanggan };
+
+            DashboardPelanggan dashpelanggan = new DashboardPelanggan(pelanggan);
+            dashpelanggan.Show();
+            this.Hide();
+        }
+
+        private void btnDataDiri_Click(object sender, EventArgs e)
+        {
+            var pelangganid = new Pelanggan { id_pelanggan = _idPelanggan };
+
+            EditDataDiri dataDiriPelanggan = new EditDataDiri(pelangganid.id_pelanggan);
+            dataDiriPelanggan.Show();
+            this.Hide();
+        }
+
+        private void LihatRiwayat_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

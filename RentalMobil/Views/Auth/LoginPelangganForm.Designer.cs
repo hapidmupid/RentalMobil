@@ -32,7 +32,9 @@
             tbPassword = new TextBox();
             tbUsername = new TextBox();
             btnLogin = new PictureBox();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)btnLogin).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // tbPassword
@@ -65,12 +67,25 @@
             btnLogin.TabStop = false;
             btnLogin.Click += btnLogin_Click_1;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(902, 34);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(38, 34);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
             // LoginPelangganForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1442, 1023);
+            Controls.Add(pictureBox1);
             Controls.Add(btnLogin);
             Controls.Add(tbUsername);
             Controls.Add(tbPassword);
@@ -79,6 +94,7 @@
             Text = "LoginPelangganForm";
             Load += LoginPelangganForm_Load;
             ((System.ComponentModel.ISupportInitialize)btnLogin).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -88,5 +104,6 @@
         private TextBox tbPassword;
         private TextBox tbUsername;
         private PictureBox btnLogin;
+        private PictureBox pictureBox1;
     }
 }

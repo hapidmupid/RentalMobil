@@ -47,9 +47,9 @@
             // 
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(58, 149);
+            pictureBox1.Location = new Point(56, 152);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(272, 71);
+            pictureBox1.Size = new Size(264, 71);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
@@ -58,7 +58,7 @@
             // 
             btnLihatRiwayat.BackColor = Color.Transparent;
             btnLihatRiwayat.Image = (Image)resources.GetObject("btnLihatRiwayat.Image");
-            btnLihatRiwayat.Location = new Point(58, 226);
+            btnLihatRiwayat.Location = new Point(57, 229);
             btnLihatRiwayat.Name = "btnLihatRiwayat";
             btnLihatRiwayat.Size = new Size(187, 40);
             btnLihatRiwayat.SizeMode = PictureBoxSizeMode.Zoom;
@@ -103,7 +103,7 @@
             // 
             btnDataDiri.BackColor = Color.Transparent;
             btnDataDiri.Image = (Image)resources.GetObject("btnDataDiri.Image");
-            btnDataDiri.Location = new Point(53, 285);
+            btnDataDiri.Location = new Point(51, 288);
             btnDataDiri.Name = "btnDataDiri";
             btnDataDiri.Size = new Size(155, 35);
             btnDataDiri.SizeMode = PictureBoxSizeMode.Zoom;
@@ -126,6 +126,7 @@
             Name = "DashboardPelanggan";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "DashboardPelanggan";
+            Load += DashboardPelanggan_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnLihatRiwayat).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnLogOut).EndInit();
