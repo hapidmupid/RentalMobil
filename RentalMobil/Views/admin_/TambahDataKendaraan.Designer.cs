@@ -31,12 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TambahDataKendaraan));
             btnBatal = new PictureBox();
             btnSimpan = new PictureBox();
-            tbStatus = new TextBox();
             tbHarga = new TextBox();
             tbNoPlat = new TextBox();
             tbTahun = new TextBox();
             tbModel = new TextBox();
             tbMerk = new TextBox();
+            tbStatus = new Label();
             ((System.ComponentModel.ISupportInitialize)btnBatal).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnSimpan).BeginInit();
             SuspendLayout();
@@ -64,15 +64,6 @@
             btnSimpan.TabIndex = 2;
             btnSimpan.TabStop = false;
             btnSimpan.Click += btnSimpan_Click;
-            // 
-            // tbStatus
-            // 
-            tbStatus.BorderStyle = BorderStyle.None;
-            tbStatus.Font = new Font("Montserrat Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            tbStatus.Location = new Point(92, 694);
-            tbStatus.Name = "tbStatus";
-            tbStatus.Size = new Size(602, 25);
-            tbStatus.TabIndex = 3;
             // 
             // tbHarga
             // 
@@ -119,23 +110,35 @@
             tbMerk.Size = new Size(602, 25);
             tbMerk.TabIndex = 3;
             // 
+            // tbStatus
+            // 
+            tbStatus.AutoSize = true;
+            tbStatus.BackColor = Color.Transparent;
+            tbStatus.Font = new Font("Montserrat Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tbStatus.Location = new Point(92, 695);
+            tbStatus.Name = "tbStatus";
+            tbStatus.Size = new Size(97, 27);
+            tbStatus.TabIndex = 4;
+            tbStatus.Text = "Tersedia";
+            // 
             // TambahDataKendaraan
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(794, 994);
+            Controls.Add(tbStatus);
             Controls.Add(tbMerk);
             Controls.Add(tbModel);
             Controls.Add(tbTahun);
             Controls.Add(tbNoPlat);
             Controls.Add(tbHarga);
-            Controls.Add(tbStatus);
             Controls.Add(btnBatal);
             Controls.Add(btnSimpan);
             Name = "TambahDataKendaraan";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "TambahDataKendaraan";
+            Load += TambahDataKendaraan_Load;
             ((System.ComponentModel.ISupportInitialize)btnBatal).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnSimpan).EndInit();
             ResumeLayout(false);
@@ -146,11 +149,11 @@
 
         private PictureBox btnBatal;
         private PictureBox btnSimpan;
-        private TextBox tbStatus;
         private TextBox tbHarga;
         private TextBox tbNoPlat;
         private TextBox tbTahun;
         private TextBox tbModel;
         private TextBox tbMerk;
+        private Label tbStatus;
     }
 }

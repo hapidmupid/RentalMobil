@@ -190,7 +190,7 @@ namespace RentalMobil.Views.pelanggan_
                 if (dataRiwayat.Rows.Count == 0)
                 {
                     MessageBox.Show("Tidak ada transaksi belum lunas.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.DialogResult = DialogResult.Cancel;
+                    //this.DialogResult = DialogResult.Cancel;
                 }
             }
             catch (Exception ex)

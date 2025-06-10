@@ -22,12 +22,16 @@ namespace RentalMobil.Views.admin_
 
         private bool ValidateInput()
         {
+
+
+            tbStatus.Text = "tersedia"; // Set default status to "tersedia"
+
             if (string.IsNullOrEmpty(tbMerk.Text) ||
                 string.IsNullOrEmpty(tbModel.Text) ||
                 string.IsNullOrEmpty(tbTahun.Text) ||
                 string.IsNullOrEmpty(tbNoPlat.Text) ||
                 string.IsNullOrEmpty(tbHarga.Text))
-                //string.IsNullOrEmpty(tbStatus.Text))
+            //string.IsNullOrEmpty(tbStatus.Text))
 
 
             {
@@ -74,6 +78,11 @@ namespace RentalMobil.Views.admin_
         {
             DialogResult = DialogResult.Cancel;
             Close();
+        }
+
+        private void TambahDataKendaraan_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
