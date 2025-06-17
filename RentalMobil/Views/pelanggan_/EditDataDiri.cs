@@ -89,5 +89,19 @@ namespace RentalMobil.Views.pelanggan_
                 }
             }
         }
+
+        private void btnLihatRiwayat_Click(object sender, EventArgs e)
+        {
+            LihatRiwayat lihatRiwayat = new LihatRiwayat(idPelanggan);
+            lihatRiwayat.Show();
+            this.Hide();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            AuthForm authForm = new AuthForm();
+            this.Hide();
+            authForm.Show();
+        }
     }
 }

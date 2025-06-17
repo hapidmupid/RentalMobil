@@ -36,14 +36,12 @@
             pictureBox1 = new PictureBox();
             btnKelolaPelanggan = new PictureBox();
             btnKelolaKendaraan = new PictureBox();
-            btnKelolaTransaksi = new PictureBox();
             btnLihatRiwayat = new PictureBox();
             btnLogOut = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dgvTransaksiTerbaru).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnKelolaPelanggan).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnKelolaKendaraan).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnKelolaTransaksi).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnLihatRiwayat).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnLogOut).BeginInit();
             SuspendLayout();
@@ -52,11 +50,11 @@
             // 
             lblTotalKendaraan.AutoSize = true;
             lblTotalKendaraan.BackColor = Color.Transparent;
-            lblTotalKendaraan.Font = new Font("Montserrat Black", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTotalKendaraan.Font = new Font("Microsoft Sans Serif", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTotalKendaraan.ForeColor = SystemColors.Control;
             lblTotalKendaraan.Location = new Point(560, 146);
             lblTotalKendaraan.Name = "lblTotalKendaraan";
-            lblTotalKendaraan.Size = new Size(102, 111);
+            lblTotalKendaraan.Size = new Size(84, 91);
             lblTotalKendaraan.TabIndex = 0;
             lblTotalKendaraan.Text = "0";
             // 
@@ -64,11 +62,11 @@
             // 
             lblTotalPelanggan.AutoSize = true;
             lblTotalPelanggan.BackColor = Color.Transparent;
-            lblTotalPelanggan.Font = new Font("Montserrat Black", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTotalPelanggan.Font = new Font("Microsoft Sans Serif", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTotalPelanggan.ForeColor = SystemColors.ControlLightLight;
             lblTotalPelanggan.Location = new Point(1112, 146);
             lblTotalPelanggan.Name = "lblTotalPelanggan";
-            lblTotalPelanggan.Size = new Size(102, 111);
+            lblTotalPelanggan.Size = new Size(84, 91);
             lblTotalPelanggan.TabIndex = 0;
             lblTotalPelanggan.Text = "0";
             // 
@@ -76,11 +74,11 @@
             // 
             lblPendapatanBulanIni.AutoSize = true;
             lblPendapatanBulanIni.BackColor = Color.Transparent;
-            lblPendapatanBulanIni.Font = new Font("Montserrat ExtraBold", 19.7999973F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPendapatanBulanIni.Font = new Font("Microsoft Sans Serif", 19.7999973F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblPendapatanBulanIni.ForeColor = SystemColors.ButtonHighlight;
             lblPendapatanBulanIni.Location = new Point(390, 369);
             lblPendapatanBulanIni.Name = "lblPendapatanBulanIni";
-            lblPendapatanBulanIni.Size = new Size(401, 46);
+            lblPendapatanBulanIni.Size = new Size(346, 38);
             lblPendapatanBulanIni.TabIndex = 0;
             lblPendapatanBulanIni.Text = "Pendapatan Bulan Ini";
             // 
@@ -133,22 +131,11 @@
             btnKelolaKendaraan.TabStop = false;
             btnKelolaKendaraan.Click += btnKelolaKendaraan_Click;
             // 
-            // btnKelolaTransaksi
-            // 
-            btnKelolaTransaksi.BackColor = Color.Transparent;
-            btnKelolaTransaksi.Image = (Image)resources.GetObject("btnKelolaTransaksi.Image");
-            btnKelolaTransaksi.Location = new Point(52, 374);
-            btnKelolaTransaksi.Name = "btnKelolaTransaksi";
-            btnKelolaTransaksi.Size = new Size(225, 94);
-            btnKelolaTransaksi.SizeMode = PictureBoxSizeMode.Zoom;
-            btnKelolaTransaksi.TabIndex = 3;
-            btnKelolaTransaksi.TabStop = false;
-            // 
             // btnLihatRiwayat
             // 
             btnLihatRiwayat.BackColor = Color.Transparent;
             btnLihatRiwayat.Image = (Image)resources.GetObject("btnLihatRiwayat.Image");
-            btnLihatRiwayat.Location = new Point(52, 478);
+            btnLihatRiwayat.Location = new Point(52, 400);
             btnLihatRiwayat.Name = "btnLihatRiwayat";
             btnLihatRiwayat.Size = new Size(187, 40);
             btnLihatRiwayat.SizeMode = PictureBoxSizeMode.Zoom;
@@ -160,7 +147,7 @@
             // 
             btnLogOut.BackColor = Color.Transparent;
             btnLogOut.Image = (Image)resources.GetObject("btnLogOut.Image");
-            btnLogOut.Location = new Point(22, 549);
+            btnLogOut.Location = new Point(52, 924);
             btnLogOut.Name = "btnLogOut";
             btnLogOut.Size = new Size(183, 36);
             btnLogOut.SizeMode = PictureBoxSizeMode.Zoom;
@@ -176,7 +163,6 @@
             ClientSize = new Size(1442, 1023);
             Controls.Add(btnLogOut);
             Controls.Add(btnLihatRiwayat);
-            Controls.Add(btnKelolaTransaksi);
             Controls.Add(btnKelolaKendaraan);
             Controls.Add(btnKelolaPelanggan);
             Controls.Add(pictureBox1);
@@ -192,7 +178,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnKelolaPelanggan).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnKelolaKendaraan).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnKelolaTransaksi).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnLihatRiwayat).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnLogOut).EndInit();
             ResumeLayout(false);
@@ -208,7 +193,6 @@
         private PictureBox pictureBox1;
         private PictureBox btnKelolaPelanggan;
         private PictureBox btnKelolaKendaraan;
-        private PictureBox btnKelolaTransaksi;
         private PictureBox btnLihatRiwayat;
         private PictureBox btnLogOut;
     }

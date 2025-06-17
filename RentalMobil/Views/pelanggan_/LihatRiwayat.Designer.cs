@@ -35,12 +35,14 @@
             btnDataDiri = new PictureBox();
             btnLihatRiwayat = new PictureBox();
             btnBeranda = new PictureBox();
+            btnLogout = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dgRiwayat).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnRefresh).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnDataDiri).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnLihatRiwayat).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnBeranda).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnLogout).BeginInit();
             SuspendLayout();
             // 
             // dgRiwayat
@@ -112,12 +114,25 @@
             btnBeranda.TabStop = false;
             btnBeranda.Click += btnBeranda_Click;
             // 
+            // btnLogout
+            // 
+            btnLogout.BackColor = Color.Transparent;
+            btnLogout.Image = (Image)resources.GetObject("btnLogout.Image");
+            btnLogout.Location = new Point(81, 918);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(183, 36);
+            btnLogout.SizeMode = PictureBoxSizeMode.Zoom;
+            btnLogout.TabIndex = 20;
+            btnLogout.TabStop = false;
+            btnLogout.Click += btnLogout_Click;
+            // 
             // LihatRiwayat
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1442, 1023);
+            Controls.Add(btnLogout);
             Controls.Add(btnDataDiri);
             Controls.Add(btnLihatRiwayat);
             Controls.Add(btnBeranda);
@@ -134,6 +149,7 @@
             ((System.ComponentModel.ISupportInitialize)btnDataDiri).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnLihatRiwayat).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnBeranda).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnLogout).EndInit();
             ResumeLayout(false);
         }
 
@@ -145,5 +161,6 @@
         private PictureBox btnDataDiri;
         private PictureBox btnLihatRiwayat;
         private PictureBox btnBeranda;
+        private PictureBox btnLogout;
     }
 }

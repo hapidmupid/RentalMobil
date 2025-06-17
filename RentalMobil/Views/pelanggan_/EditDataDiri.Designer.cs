@@ -37,10 +37,12 @@
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
+            btnLogout = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnLihatRiwayat).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnEdit).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnLogout).BeginInit();
             SuspendLayout();
             // 
             // pictureBox3
@@ -65,6 +67,7 @@
             btnLihatRiwayat.SizeMode = PictureBoxSizeMode.Zoom;
             btnLihatRiwayat.TabIndex = 18;
             btnLihatRiwayat.TabStop = false;
+            btnLihatRiwayat.Click += btnLihatRiwayat_Click;
             // 
             // pictureBox1
             // 
@@ -94,10 +97,10 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Montserrat Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(419, 227);
             label1.Name = "label1";
-            label1.Size = new Size(69, 27);
+            label1.Size = new Size(70, 25);
             label1.TabIndex = 21;
             label1.Text = "label1";
             label1.Click += label1_Click;
@@ -106,10 +109,10 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Montserrat Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(419, 332);
             label2.Name = "label2";
-            label2.Size = new Size(73, 27);
+            label2.Size = new Size(70, 25);
             label2.TabIndex = 21;
             label2.Text = "label2";
             // 
@@ -117,10 +120,10 @@
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Montserrat Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.Location = new Point(419, 439);
             label3.Name = "label3";
-            label3.Size = new Size(73, 27);
+            label3.Size = new Size(70, 25);
             label3.TabIndex = 21;
             label3.Text = "label3";
             // 
@@ -128,12 +131,24 @@
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Montserrat Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.Location = new Point(419, 542);
             label4.Name = "label4";
-            label4.Size = new Size(75, 27);
+            label4.Size = new Size(70, 25);
             label4.TabIndex = 21;
             label4.Text = "label4";
+            // 
+            // btnLogout
+            // 
+            btnLogout.BackColor = Color.Transparent;
+            btnLogout.Image = (Image)resources.GetObject("btnLogout.Image");
+            btnLogout.Location = new Point(91, 925);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(183, 36);
+            btnLogout.SizeMode = PictureBoxSizeMode.Zoom;
+            btnLogout.TabIndex = 22;
+            btnLogout.TabStop = false;
+            btnLogout.Click += btnLogout_Click;
             // 
             // EditDataDiri
             // 
@@ -141,6 +156,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1442, 1023);
+            Controls.Add(btnLogout);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -156,6 +172,7 @@
             ((System.ComponentModel.ISupportInitialize)btnLihatRiwayat).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnEdit).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnLogout).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -170,5 +187,6 @@
         private Label label2;
         private Label label3;
         private Label label4;
+        private PictureBox btnLogout;
     }
 }

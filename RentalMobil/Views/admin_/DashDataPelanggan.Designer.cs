@@ -34,7 +34,6 @@
             btnEdit = new PictureBox();
             btnLogOut = new PictureBox();
             btnLihatRiwayat = new PictureBox();
-            btnKelolaTransaksi = new PictureBox();
             btnKelolaKendaraan = new PictureBox();
             btnKelolaPelanggan = new PictureBox();
             btnBeranda = new PictureBox();
@@ -43,7 +42,6 @@
             ((System.ComponentModel.ISupportInitialize)btnEdit).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnLogOut).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnLihatRiwayat).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnKelolaTransaksi).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnKelolaKendaraan).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnKelolaPelanggan).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnBeranda).BeginInit();
@@ -86,34 +84,25 @@
             // 
             btnLogOut.BackColor = Color.Transparent;
             btnLogOut.Image = (Image)resources.GetObject("btnLogOut.Image");
-            btnLogOut.Location = new Point(21, 549);
+            btnLogOut.Location = new Point(93, 937);
             btnLogOut.Name = "btnLogOut";
             btnLogOut.Size = new Size(183, 36);
             btnLogOut.SizeMode = PictureBoxSizeMode.Zoom;
             btnLogOut.TabIndex = 5;
             btnLogOut.TabStop = false;
+            btnLogOut.Click += btnLogOut_Click;
             // 
             // btnLihatRiwayat
             // 
             btnLihatRiwayat.BackColor = Color.Transparent;
             btnLihatRiwayat.Image = (Image)resources.GetObject("btnLihatRiwayat.Image");
-            btnLihatRiwayat.Location = new Point(51, 478);
+            btnLihatRiwayat.Location = new Point(51, 400);
             btnLihatRiwayat.Name = "btnLihatRiwayat";
             btnLihatRiwayat.Size = new Size(187, 40);
             btnLihatRiwayat.SizeMode = PictureBoxSizeMode.Zoom;
             btnLihatRiwayat.TabIndex = 6;
             btnLihatRiwayat.TabStop = false;
-            // 
-            // btnKelolaTransaksi
-            // 
-            btnKelolaTransaksi.BackColor = Color.Transparent;
-            btnKelolaTransaksi.Image = (Image)resources.GetObject("btnKelolaTransaksi.Image");
-            btnKelolaTransaksi.Location = new Point(51, 374);
-            btnKelolaTransaksi.Name = "btnKelolaTransaksi";
-            btnKelolaTransaksi.Size = new Size(225, 94);
-            btnKelolaTransaksi.SizeMode = PictureBoxSizeMode.Zoom;
-            btnKelolaTransaksi.TabIndex = 7;
-            btnKelolaTransaksi.TabStop = false;
+            btnLihatRiwayat.Click += btnLihatRiwayat_Click;
             // 
             // btnKelolaKendaraan
             // 
@@ -158,7 +147,6 @@
             ClientSize = new Size(1442, 1023);
             Controls.Add(btnLogOut);
             Controls.Add(btnLihatRiwayat);
-            Controls.Add(btnKelolaTransaksi);
             Controls.Add(btnKelolaKendaraan);
             Controls.Add(btnKelolaPelanggan);
             Controls.Add(btnBeranda);
@@ -174,7 +162,6 @@
             ((System.ComponentModel.ISupportInitialize)btnEdit).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnLogOut).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnLihatRiwayat).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnKelolaTransaksi).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnKelolaKendaraan).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnKelolaPelanggan).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnBeranda).EndInit();
@@ -188,7 +175,6 @@
         private PictureBox btnEdit;
         private PictureBox btnLogOut;
         private PictureBox btnLihatRiwayat;
-        private PictureBox btnKelolaTransaksi;
         private PictureBox btnKelolaKendaraan;
         private PictureBox btnKelolaPelanggan;
         private PictureBox btnBeranda;

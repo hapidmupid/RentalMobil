@@ -54,37 +54,37 @@
             // tbNama
             // 
             tbNama.BorderStyle = BorderStyle.None;
-            tbNama.Font = new Font("Montserrat Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tbNama.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             tbNama.Location = new Point(91, 170);
             tbNama.Name = "tbNama";
-            tbNama.Size = new Size(602, 25);
+            tbNama.Size = new Size(602, 23);
             tbNama.TabIndex = 1;
             // 
             // tbEmail
             // 
             tbEmail.BorderStyle = BorderStyle.None;
-            tbEmail.Font = new Font("Montserrat Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tbEmail.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             tbEmail.Location = new Point(91, 275);
             tbEmail.Name = "tbEmail";
-            tbEmail.Size = new Size(602, 25);
+            tbEmail.Size = new Size(602, 23);
             tbEmail.TabIndex = 1;
             // 
             // tbAlamat
             // 
             tbAlamat.BorderStyle = BorderStyle.None;
-            tbAlamat.Font = new Font("Montserrat Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tbAlamat.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             tbAlamat.Location = new Point(91, 382);
             tbAlamat.Name = "tbAlamat";
-            tbAlamat.Size = new Size(602, 25);
+            tbAlamat.Size = new Size(602, 23);
             tbAlamat.TabIndex = 1;
             // 
             // tbNoTelp
             // 
             tbNoTelp.BorderStyle = BorderStyle.None;
-            tbNoTelp.Font = new Font("Montserrat Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tbNoTelp.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             tbNoTelp.Location = new Point(91, 485);
             tbNoTelp.Name = "tbNoTelp";
-            tbNoTelp.Size = new Size(602, 25);
+            tbNoTelp.Size = new Size(602, 23);
             tbNoTelp.TabIndex = 1;
             // 
             // btnBatal

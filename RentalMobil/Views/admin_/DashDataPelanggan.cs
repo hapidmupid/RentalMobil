@@ -209,5 +209,19 @@ namespace RentalMobil.Views.admin_
             var kelolaKendaraan = new DashDataKendaraan();
             kelolaKendaraan.Show();
         }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var authForm = new AuthForm();
+            authForm.Show();
+        }
+
+        private void btnLihatRiwayat_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var riwayatTransaksi = new DashRiwayat();
+            riwayatTransaksi.Show();
+        }
     }
 }

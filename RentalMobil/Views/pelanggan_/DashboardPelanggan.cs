@@ -200,11 +200,6 @@ namespace RentalMobil.Views.pelanggan_
             LihatRiwayat lihatRiwayat = new LihatRiwayat(Pelanggan.id_pelanggan);
             lihatRiwayat.Show();
             this.Hide();
-
-            //int idPelanggan = Pelanggan.id_pelanggan;
-
-            //var formRiwayat = new LihatRiwayat(idPelanggan);
-            //formRiwayat.ShowDialog();
         }
 
         private void DashboardPelanggan_Load(object sender, EventArgs e)
