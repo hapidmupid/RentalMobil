@@ -63,6 +63,12 @@ namespace RentalMobil.Views
                 textBox4.Focus();
                 return;
             }
+            if (textBox4.Text.Contains(" "))
+            {
+                MessageBox.Show("Username tidak boleh mengandung spasi!", "Format Salah", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textBox4.Focus();
+                return;
+            }
             if (string.IsNullOrWhiteSpace(textBox1.Text))
             {
                 MessageBox.Show("Password harus diisi!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);

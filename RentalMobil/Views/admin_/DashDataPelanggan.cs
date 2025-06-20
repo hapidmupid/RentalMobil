@@ -155,6 +155,7 @@ namespace RentalMobil.Views.admin_
                         MessageBox.Show("Gagal menghapus pelanggan", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
+
             }
             else
             {
