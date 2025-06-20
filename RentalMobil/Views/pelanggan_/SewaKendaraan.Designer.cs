@@ -38,10 +38,8 @@
             lblTotal = new Label();
             dtpTanggalMulai = new DateTimePicker();
             dtpTanggalSelesai = new DateTimePicker();
-            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)btnSewa).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnBatal).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // btnSewa
@@ -60,7 +58,7 @@
             // 
             btnBatal.BackColor = Color.Transparent;
             btnBatal.Image = (Image)resources.GetObject("btnBatal.Image");
-            btnBatal.Location = new Point(251, 850);
+            btnBatal.Location = new Point(95, 850);
             btnBatal.Name = "btnBatal";
             btnBatal.Size = new Size(216, 50);
             btnBatal.SizeMode = PictureBoxSizeMode.Zoom;
@@ -71,10 +69,10 @@
             // 
             lblMerkModel.AutoSize = true;
             lblMerkModel.BackColor = Color.Transparent;
-            lblMerkModel.Font = new Font("Montserrat Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblMerkModel.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblMerkModel.Location = new Point(95, 170);
             lblMerkModel.Name = "lblMerkModel";
-            lblMerkModel.Size = new Size(136, 27);
+            lblMerkModel.Size = new Size(123, 25);
             lblMerkModel.TabIndex = 2;
             lblMerkModel.Text = "merk model";
             // 
@@ -82,10 +80,10 @@
             // 
             lblTahun.AutoSize = true;
             lblTahun.BackColor = Color.Transparent;
-            lblTahun.Font = new Font("Montserrat Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTahun.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTahun.Location = new Point(95, 275);
             lblTahun.Name = "lblTahun";
-            lblTahun.Size = new Size(74, 27);
+            lblTahun.Size = new Size(66, 25);
             lblTahun.TabIndex = 3;
             lblTahun.Text = "tahun";
             // 
@@ -93,10 +91,10 @@
             // 
             lblNoPlat.AutoSize = true;
             lblNoPlat.BackColor = Color.Transparent;
-            lblNoPlat.Font = new Font("Montserrat Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblNoPlat.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblNoPlat.Location = new Point(95, 382);
             lblNoPlat.Name = "lblNoPlat";
-            lblNoPlat.Size = new Size(86, 27);
+            lblNoPlat.Size = new Size(82, 25);
             lblNoPlat.TabIndex = 4;
             lblNoPlat.Text = "No.Plat";
             // 
@@ -104,10 +102,10 @@
             // 
             lblHargaPerHari.AutoSize = true;
             lblHargaPerHari.BackColor = Color.Transparent;
-            lblHargaPerHari.Font = new Font("Montserrat Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblHargaPerHari.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblHargaPerHari.Location = new Point(95, 485);
             lblHargaPerHari.Name = "lblHargaPerHari";
-            lblHargaPerHari.Size = new Size(133, 27);
+            lblHargaPerHari.Size = new Size(128, 25);
             lblHargaPerHari.TabIndex = 5;
             lblHargaPerHari.Text = "Harga / Hari";
             // 
@@ -115,10 +113,10 @@
             // 
             lblTotal.AutoSize = true;
             lblTotal.BackColor = Color.Transparent;
-            lblTotal.Font = new Font("Montserrat Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTotal.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTotal.Location = new Point(462, 485);
             lblTotal.Name = "lblTotal";
-            lblTotal.Size = new Size(62, 27);
+            lblTotal.Size = new Size(61, 25);
             lblTotal.TabIndex = 6;
             lblTotal.Text = "Total";
             // 
@@ -138,25 +136,12 @@
             dtpTanggalSelesai.Size = new Size(354, 34);
             dtpTanggalSelesai.TabIndex = 8;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(119, 776);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(216, 50);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 9;
-            pictureBox1.TabStop = false;
-
-            // 
             // SewaKendaraan
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(798, 993);
-            Controls.Add(pictureBox1);
             Controls.Add(dtpTanggalSelesai);
             Controls.Add(dtpTanggalMulai);
             Controls.Add(lblTotal);
@@ -171,7 +156,6 @@
             Text = "SewaKendaraan";
             ((System.ComponentModel.ISupportInitialize)btnSewa).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnBatal).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -187,6 +171,5 @@
         private Label lblTotal;
         private DateTimePicker dtpTanggalMulai;
         private DateTimePicker dtpTanggalSelesai;
-        private PictureBox pictureBox1;
     }
 }

@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashDataKendaraan));
             btnLogOut = new PictureBox();
             btnLihatRiwayat = new PictureBox();
-            btnKelolaTransaksi = new PictureBox();
             btnKelolaKendaraan = new PictureBox();
             btnKelolaPelanggan = new PictureBox();
             btnBeranda = new PictureBox();
@@ -42,7 +41,6 @@
             btnRefresh = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)btnLogOut).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnLihatRiwayat).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnKelolaTransaksi).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnKelolaKendaraan).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnKelolaPelanggan).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnBeranda).BeginInit();
@@ -57,34 +55,25 @@
             // 
             btnLogOut.BackColor = Color.Transparent;
             btnLogOut.Image = (Image)resources.GetObject("btnLogOut.Image");
-            btnLogOut.Location = new Point(21, 542);
+            btnLogOut.Location = new Point(74, 930);
             btnLogOut.Name = "btnLogOut";
             btnLogOut.Size = new Size(183, 36);
             btnLogOut.SizeMode = PictureBoxSizeMode.Zoom;
             btnLogOut.TabIndex = 14;
             btnLogOut.TabStop = false;
+            btnLogOut.Click += btnLogOut_Click;
             // 
             // btnLihatRiwayat
             // 
             btnLihatRiwayat.BackColor = Color.Transparent;
             btnLihatRiwayat.Image = (Image)resources.GetObject("btnLihatRiwayat.Image");
-            btnLihatRiwayat.Location = new Point(51, 471);
+            btnLihatRiwayat.Location = new Point(49, 398);
             btnLihatRiwayat.Name = "btnLihatRiwayat";
             btnLihatRiwayat.Size = new Size(187, 40);
             btnLihatRiwayat.SizeMode = PictureBoxSizeMode.Zoom;
             btnLihatRiwayat.TabIndex = 15;
             btnLihatRiwayat.TabStop = false;
-            // 
-            // btnKelolaTransaksi
-            // 
-            btnKelolaTransaksi.BackColor = Color.Transparent;
-            btnKelolaTransaksi.Image = (Image)resources.GetObject("btnKelolaTransaksi.Image");
-            btnKelolaTransaksi.Location = new Point(51, 367);
-            btnKelolaTransaksi.Name = "btnKelolaTransaksi";
-            btnKelolaTransaksi.Size = new Size(225, 94);
-            btnKelolaTransaksi.SizeMode = PictureBoxSizeMode.Zoom;
-            btnKelolaTransaksi.TabIndex = 16;
-            btnKelolaTransaksi.TabStop = false;
+            btnLihatRiwayat.Click += btnLihatRiwayat_Click;
             // 
             // btnKelolaKendaraan
             // 
@@ -187,7 +176,6 @@
             Controls.Add(btnRefresh);
             Controls.Add(btnLogOut);
             Controls.Add(btnLihatRiwayat);
-            Controls.Add(btnKelolaTransaksi);
             Controls.Add(btnKelolaKendaraan);
             Controls.Add(btnKelolaPelanggan);
             Controls.Add(btnBeranda);
@@ -200,7 +188,6 @@
             Text = "DashDataKendaraan";
             ((System.ComponentModel.ISupportInitialize)btnLogOut).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnLihatRiwayat).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnKelolaTransaksi).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnKelolaKendaraan).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnKelolaPelanggan).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnBeranda).EndInit();
@@ -216,7 +203,6 @@
 
         private PictureBox btnLogOut;
         private PictureBox btnLihatRiwayat;
-        private PictureBox btnKelolaTransaksi;
         private PictureBox btnKelolaKendaraan;
         private PictureBox btnKelolaPelanggan;
         private PictureBox btnBeranda;

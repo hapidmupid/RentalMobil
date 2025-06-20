@@ -156,5 +156,12 @@ namespace RentalMobil.Views.pelanggan_
         {
 
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            AuthForm authForm = new AuthForm();
+            this.Hide();
+            authForm.Show();
+        }
     }
 }

@@ -32,14 +32,12 @@
             dgvRiwayatTransaksi = new DataGridView();
             btnLogOut = new PictureBox();
             btnLihatRiwayat = new PictureBox();
-            btnKelolaTransaksi = new PictureBox();
             btnKelolaKendaraan = new PictureBox();
             btnKelolaPelanggan = new PictureBox();
             btnBeranda = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dgvRiwayatTransaksi).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnLogOut).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnLihatRiwayat).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnKelolaTransaksi).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnKelolaKendaraan).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnKelolaPelanggan).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnBeranda).BeginInit();
@@ -64,12 +62,13 @@
             btnLogOut.SizeMode = PictureBoxSizeMode.Zoom;
             btnLogOut.TabIndex = 20;
             btnLogOut.TabStop = false;
+            btnLogOut.Click += btnLogOut_Click;
             // 
             // btnLihatRiwayat
             // 
             btnLihatRiwayat.BackColor = Color.Transparent;
             btnLihatRiwayat.Image = (Image)resources.GetObject("btnLihatRiwayat.Image");
-            btnLihatRiwayat.Location = new Point(54, 422);
+            btnLihatRiwayat.Location = new Point(54, 370);
             btnLihatRiwayat.Name = "btnLihatRiwayat";
             btnLihatRiwayat.Size = new Size(265, 79);
             btnLihatRiwayat.SizeMode = PictureBoxSizeMode.Zoom;
@@ -77,22 +76,11 @@
             btnLihatRiwayat.TabStop = false;
             btnLihatRiwayat.Click += btnLihatRiwayat_Click;
             // 
-            // btnKelolaTransaksi
-            // 
-            btnKelolaTransaksi.BackColor = Color.Transparent;
-            btnKelolaTransaksi.Image = (Image)resources.GetObject("btnKelolaTransaksi.Image");
-            btnKelolaTransaksi.Location = new Point(54, 337);
-            btnKelolaTransaksi.Name = "btnKelolaTransaksi";
-            btnKelolaTransaksi.Size = new Size(225, 94);
-            btnKelolaTransaksi.SizeMode = PictureBoxSizeMode.Zoom;
-            btnKelolaTransaksi.TabIndex = 22;
-            btnKelolaTransaksi.TabStop = false;
-            // 
             // btnKelolaKendaraan
             // 
             btnKelolaKendaraan.BackColor = Color.Transparent;
             btnKelolaKendaraan.Image = (Image)resources.GetObject("btnKelolaKendaraan.Image");
-            btnKelolaKendaraan.Location = new Point(54, 268);
+            btnKelolaKendaraan.Location = new Point(54, 277);
             btnKelolaKendaraan.Name = "btnKelolaKendaraan";
             btnKelolaKendaraan.Size = new Size(233, 96);
             btnKelolaKendaraan.SizeMode = PictureBoxSizeMode.Zoom;
@@ -132,7 +120,6 @@
             ClientSize = new Size(1442, 1023);
             Controls.Add(btnLogOut);
             Controls.Add(btnLihatRiwayat);
-            Controls.Add(btnKelolaTransaksi);
             Controls.Add(btnKelolaKendaraan);
             Controls.Add(btnKelolaPelanggan);
             Controls.Add(btnBeranda);
@@ -144,7 +131,6 @@
             ((System.ComponentModel.ISupportInitialize)dgvRiwayatTransaksi).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnLogOut).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnLihatRiwayat).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnKelolaTransaksi).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnKelolaKendaraan).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnKelolaPelanggan).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnBeranda).EndInit();
@@ -156,7 +142,6 @@
         private DataGridView dgvRiwayatTransaksi;
         private PictureBox btnLogOut;
         private PictureBox btnLihatRiwayat;
-        private PictureBox btnKelolaTransaksi;
         private PictureBox btnKelolaKendaraan;
         private PictureBox btnKelolaPelanggan;
         private PictureBox btnBeranda;

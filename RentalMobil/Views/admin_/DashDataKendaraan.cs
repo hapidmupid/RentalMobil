@@ -228,7 +228,7 @@ namespace RentalMobil.Views.admin_
             {
                 MessageBox.Show("Pilih kendaraan yang akan diedit", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-           
+
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -248,6 +248,20 @@ namespace RentalMobil.Views.admin_
             this.Hide();
             var kelolaPelanggan = new DashDataPelanggan();
             kelolaPelanggan.Show();
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var authForm = new AuthForm();
+            authForm.Show();
+        }
+
+        private void btnLihatRiwayat_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var riwayatTransaksi = new DashRiwayat();
+            riwayatTransaksi.Show();
         }
     }
 }
